@@ -1,30 +1,6 @@
 -- Pulse University Database Sample Data Loading Script
 USE pulse_university;
 
--- Clear all tables first to ensure we're starting fresh
-SET FOREIGN_KEY_CHECKS = 0;
-TRUNCATE TABLE Rating;
-TRUNCATE TABLE ResaleSellerQueue;
-TRUNCATE TABLE ResaleBuyerQueue;
-TRUNCATE TABLE Ticket;
-TRUNCATE TABLE TicketCategory;
-TRUNCATE TABLE Visitor;
-TRUNCATE TABLE StaffAssignment;
-TRUNCATE TABLE Staff;
-TRUNCATE TABLE Performance;
-TRUNCATE TABLE BandGenre;
-TRUNCATE TABLE ArtistGenre;
-TRUNCATE TABLE ArtistBand;
-TRUNCATE TABLE Band;
-TRUNCATE TABLE Artist;
-TRUNCATE TABLE Genre;
-TRUNCATE TABLE Event;
-TRUNCATE TABLE Stage;
-TRUNCATE TABLE Festival;
-TRUNCATE TABLE Location;
-TRUNCATE TABLE EntityImage;
-SET FOREIGN_KEY_CHECKS = 1;
-
 -- Insert ticket categories first since they're referenced by other tables
 INSERT INTO TicketCategory (category_name) VALUES
 ('general'),

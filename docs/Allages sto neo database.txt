@@ -1,0 +1,5 @@
+Allages sto neo database:
+
+
+bazw foreign keys gia ola ta entities se image_id me url kai description
+
