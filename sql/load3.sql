@@ -1,30 +1,6 @@
 -- Use the pulse_university database
 USE pulse_university;
 
--- Clear all existing data
-SET FOREIGN_KEY_CHECKS = 0;
-TRUNCATE TABLE ResaleBuyerQueue;
-TRUNCATE TABLE ResaleSellerQueue;
-TRUNCATE TABLE Rating;
-TRUNCATE TABLE Ticket;
-TRUNCATE TABLE TicketCategory;
-TRUNCATE TABLE Visitor;
-TRUNCATE TABLE StaffAssignment;
-TRUNCATE TABLE Staff;
-TRUNCATE TABLE Performance;
-TRUNCATE TABLE Event;
-TRUNCATE TABLE ArtistBand;
-TRUNCATE TABLE BandGenre;
-TRUNCATE TABLE ArtistGenre;
-TRUNCATE TABLE Band;
-TRUNCATE TABLE Artist;
-TRUNCATE TABLE Genre;
-TRUNCATE TABLE Stage;
-TRUNCATE TABLE Festival;
-TRUNCATE TABLE Location;
-TRUNCATE TABLE EntityImage;
-SET FOREIGN_KEY_CHECKS = 1;
-
 -- Populate EntityImage table first since it's referenced by other tables
 INSERT INTO EntityImage (entity_type, entity_id, image_path, description, url) VALUES
 (1, 1, '/images/festivals/pulse2015.jpg', 'Pulse Festival 2015 Poster', 'https://pulse-university.com/images/2015/poster'),
@@ -339,7 +315,7 @@ INSERT INTO Stage (stage_name, description, max_capacity, technical_equipment, f
 ('Quebec Stage', 'French-Canadian themed', 9000, 'Cultural decor, local sound engineers', 7),
 ('Desert Oasis', 'Main stage in Dubai', 20000, 'Heat-resistant equipment, cooling systems', 8),
 ('Gold Pavilion', 'Luxury-themed venue', 5000, 'Premium sound, VIP areas', 8),
-('Central Park Stage', 'New York's iconic location', 35000, 'Urban backdrop', city skyline views', 9),
+('Central Park Stage', 'New Yorks iconic location', 35000, 'Urban backdrop , city skyline views', 9),
 ('Brooklyn Arena', 'Industrial-styled venue', 15000, 'Warehouse aesthetics, graffiti art', 9),
 ('Victoria Harbor', 'Hong Kong waterfront', 28000, 'Light show capabilities, harbor views', 10),
 ('Kowloon Stage', 'Cultural fusion venue', 12000, 'East meets West design, traditional elements', 10);
@@ -354,6 +330,59 @@ INSERT INTO Stage (stage_name, description, max_capacity, technical_equipment, f
 ('Folk Forest', 'Nature-inspired venue for folk music', 3500, 'Natural amphitheater, woodland setting', 4),
 ('Urban Beat Box', 'Street culture inspired stage', 6000, 'Graffiti walls, street dance floor', 6),
 ('Sunset Stage', 'Western-facing stage for evening performances', 5000, 'Special sunset lighting, golden hour effects', 8);
+
+-- Insert Staff
+INSERT INTO Staff (first_name, last_name, birth_date, staff_type, role, experience_level) VALUES
+-- Technical staff
+('James', 'Williams', '1985-05-15', 'technical', 'Sound Engineer', 'expert'),
+('Maria', 'Garcia', '1990-07-22', 'technical', 'Lighting Technician', 'experienced'),
+('Robert', 'Johnson', '1988-03-10', 'technical', 'Stage Manager', 'expert'),
+('Lisa', 'Chen', '1993-09-18', 'technical', 'Audio Technician', 'intermediate'),
+('David', 'Smith', '1987-11-30', 'technical', 'Visual Effects', 'experienced'),
+('Emily', 'Taylor', '1995-02-25', 'technical', 'Equipment Manager', 'intermediate'),
+('Michael', 'Brown', '1982-06-14', 'technical', 'Production Manager', 'expert'),
+('Sophia', 'Lee', '1991-04-09', 'technical', 'Camera Operator', 'intermediate'),
+('Daniel', 'Martinez', '1989-08-12', 'technical', 'Sound Assistant', 'beginner'),
+('Olivia', 'Wilson', '1997-01-28', 'technical', 'Lighting Assistant', 'trainee'),
+('Thomas', 'Anderson', '1984-12-03', 'technical', 'Technical Director', 'expert'),
+('Emma', 'Lopez', '1992-05-17', 'technical', 'LED Screen Technician', 'intermediate'),
+('William', 'Harris', '1986-10-20', 'technical', 'Pyrotechnics Specialist', 'experienced'),
+('Ava', 'Clark', '1994-03-15', 'technical', 'Rigging Technician', 'beginner'),
+('Joseph', 'Lewis', '1983-07-28', 'technical', 'Backline Technician', 'experienced'),
+
+-- Security staff
+('John', 'Walker', '1980-04-22', 'security', 'Security Chief', 'expert'),
+('Samantha', 'King', '1988-09-14', 'security', 'Security Supervisor', 'experienced'),
+('Christopher', 'Wright', '1984-11-30', 'security', 'Entrance Guard', 'intermediate'),
+('Jessica', 'Scott', '1990-06-17', 'security', 'Stage Security', 'experienced'),
+('Matthew', 'Green', '1982-03-25', 'security', 'VIP Security', 'expert'),
+('Elizabeth', 'Baker', '1987-08-09', 'security', 'Perimeter Security', 'intermediate'),
+('Anthony', 'Adams', '1991-01-12', 'security', 'Crowd Control', 'intermediate'),
+('Ashley', 'Nelson', '1986-05-20', 'security', 'Emergency Response', 'experienced'),
+('Alexander', 'Hill', '1993-10-04', 'security', 'Security Patrol', 'beginner'),
+('Sarah', 'Rivera', '1989-12-18', 'security', 'Backstage Security', 'intermediate'),
+('Ryan', 'Mitchell', '1985-02-23', 'security', 'Asset Protection', 'experienced'),
+('Megan', 'Carter', '1992-07-15', 'security', 'Security Coordinator', 'intermediate'),
+('Kevin', 'Phillips', '1981-11-08', 'security', 'Security Analyst', 'expert'),
+('Rachel', 'Evans', '1994-04-29', 'security', 'Security Assistant', 'trainee'),
+('Brian', 'Turner', '1983-09-06', 'security', 'Access Control', 'experienced'),
+
+-- Support staff
+('Jennifer', 'Cooper', '1989-05-12', 'support', 'Guest Relations Manager', 'experienced'),
+('Nicholas', 'Peterson', '1991-08-24', 'support', 'Information Desk', 'intermediate'),
+('Amanda', 'Reed', '1986-03-17', 'support', 'First Aid Attendant', 'expert'),
+('Jacob', 'Bailey', '1993-11-09', 'support', 'Lost and Found', 'beginner'),
+('Stephanie', 'Bell', '1988-07-31', 'support', 'Hospitality Coordinator', 'experienced'),
+('Andrew', 'Gomez', '1990-02-14', 'support', 'Transportation Coordinator', 'intermediate'),
+('Melissa', 'Kelly', '1985-06-26', 'support', 'Artist Liaison', 'experienced'),
+('Joshua', 'Price', '1994-09-03', 'support', 'Volunteer Coordinator', 'beginner'),
+('Heather', 'Wood', '1987-12-19', 'support', 'Food Service Manager', 'experienced'),
+('Brandon', 'Barnes', '1992-04-11', 'support', 'Merchandise Manager', 'intermediate'),
+('Nicole', 'Ross', '1984-10-27', 'support', 'Accessibility Coordinator', 'expert'),
+('Tyler', 'Henderson', '1995-01-08', 'support', 'Information Guide', 'trainee'),
+('Amy', 'Coleman', '1986-08-15', 'support', 'VIP Host', 'experienced'),
+('Eric', 'Jenkins', '1990-05-23', 'support', 'Ticketing Manager', 'intermediate'),
+('Rebecca', 'Perry', '1988-11-30', 'support', 'Customer Service', 'experienced');
 
 -- Insert Events
 INSERT INTO Event (event_name, event_date, stage_id, start_time, end_time, description) VALUES
@@ -423,59 +452,6 @@ INSERT INTO Event (event_name, event_date, stage_id, start_time, end_time, descr
 ('Asian Showcase', '2025-07-18', 21, '17:00:00', '23:00:00', 'Top Asian artists'),
 ('Electronic Asia', '2025-07-19', 22, '20:00:00', '02:00:00', 'Modern electronic music'),
 ('Farewell from Hong Kong', '2025-07-20', 21, '18:00:00', '00:00:00', 'Final celebration');
-
--- Insert Staff
-INSERT INTO Staff (first_name, last_name, birth_date, staff_type, role, experience_level) VALUES
--- Technical staff
-('James', 'Williams', '1985-05-15', 'technical', 'Sound Engineer', 'expert'),
-('Maria', 'Garcia', '1990-07-22', 'technical', 'Lighting Technician', 'experienced'),
-('Robert', 'Johnson', '1988-03-10', 'technical', 'Stage Manager', 'expert'),
-('Lisa', 'Chen', '1993-09-18', 'technical', 'Audio Technician', 'intermediate'),
-('David', 'Smith', '1987-11-30', 'technical', 'Visual Effects', 'experienced'),
-('Emily', 'Taylor', '1995-02-25', 'technical', 'Equipment Manager', 'intermediate'),
-('Michael', 'Brown', '1982-06-14', 'technical', 'Production Manager', 'expert'),
-('Sophia', 'Lee', '1991-04-09', 'technical', 'Camera Operator', 'intermediate'),
-('Daniel', 'Martinez', '1989-08-12', 'technical', 'Sound Assistant', 'beginner'),
-('Olivia', 'Wilson', '1997-01-28', 'technical', 'Lighting Assistant', 'trainee'),
-('Thomas', 'Anderson', '1984-12-03', 'technical', 'Technical Director', 'expert'),
-('Emma', 'Lopez', '1992-05-17', 'technical', 'LED Screen Technician', 'intermediate'),
-('William', 'Harris', '1986-10-20', 'technical', 'Pyrotechnics Specialist', 'experienced'),
-('Ava', 'Clark', '1994-03-15', 'technical', 'Rigging Technician', 'beginner'),
-('Joseph', 'Lewis', '1983-07-28', 'technical', 'Backline Technician', 'experienced'),
-
--- Security staff
-('John', 'Walker', '1980-04-22', 'security', 'Security Chief', 'expert'),
-('Samantha', 'King', '1988-09-14', 'security', 'Security Supervisor', 'experienced'),
-('Christopher', 'Wright', '1984-11-30', 'security', 'Entrance Guard', 'intermediate'),
-('Jessica', 'Scott', '1990-06-17', 'security', 'Stage Security', 'experienced'),
-('Matthew', 'Green', '1982-03-25', 'security', 'VIP Security', 'expert'),
-('Elizabeth', 'Baker', '1987-08-09', 'security', 'Perimeter Security', 'intermediate'),
-('Anthony', 'Adams', '1991-01-12', 'security', 'Crowd Control', 'intermediate'),
-('Ashley', 'Nelson', '1986-05-20', 'security', 'Emergency Response', 'experienced'),
-('Alexander', 'Hill', '1993-10-04', 'security', 'Security Patrol', 'beginner'),
-('Sarah', 'Rivera', '1989-12-18', 'security', 'Backstage Security', 'intermediate'),
-('Ryan', 'Mitchell', '1985-02-23', 'security', 'Asset Protection', 'experienced'),
-('Megan', 'Carter', '1992-07-15', 'security', 'Security Coordinator', 'intermediate'),
-('Kevin', 'Phillips', '1981-11-08', 'security', 'Security Analyst', 'expert'),
-('Rachel', 'Evans', '1994-04-29', 'security', 'Security Assistant', 'trainee'),
-('Brian', 'Turner', '1983-09-06', 'security', 'Access Control', 'experienced'),
-
--- Support staff
-('Jennifer', 'Cooper', '1989-05-12', 'support', 'Guest Relations Manager', 'experienced'),
-('Nicholas', 'Peterson', '1991-08-24', 'support', 'Information Desk', 'intermediate'),
-('Amanda', 'Reed', '1986-03-17', 'support', 'First Aid Attendant', 'expert'),
-('Jacob', 'Bailey', '1993-11-09', 'support', 'Lost and Found', 'beginner'),
-('Stephanie', 'Bell', '1988-07-31', 'support', 'Hospitality Coordinator', 'experienced'),
-('Andrew', 'Gomez', '1990-02-14', 'support', 'Transportation Coordinator', 'intermediate'),
-('Melissa', 'Kelly', '1985-06-26', 'support', 'Artist Liaison', 'experienced'),
-('Joshua', 'Price', '1994-09-03', 'support', 'Volunteer Coordinator', 'beginner'),
-('Heather', 'Wood', '1987-12-19', 'support', 'Food Service Manager', 'experienced'),
-('Brandon', 'Barnes', '1992-04-11', 'support', 'Merchandise Manager', 'intermediate'),
-('Nicole', 'Ross', '1984-10-27', 'support', 'Accessibility Coordinator', 'expert'),
-('Tyler', 'Henderson', '1995-01-08', 'support', 'Information Guide', 'trainee'),
-('Amy', 'Coleman', '1986-08-15', 'support', 'VIP Host', 'experienced'),
-('Eric', 'Jenkins', '1990-05-23', 'support', 'Ticketing Manager', 'intermediate'),
-('Rebecca', 'Perry', '1988-11-30', 'support', 'Customer Service', 'experienced');
 
 -- Insert Staff Assignments
 -- For each event, assign appropriate staff (at least 5% security and 2% support based on venue capacity)
@@ -1129,33 +1105,5 @@ VALUES
 (18, 5, 1, '2018-06-15', 90.00, 'credit_card', '0000000000504', TRUE, FALSE),
 (19, 5, 1, '2018-06-15', 90.00, 'credit_card', '0000000000505', TRUE, FALSE);
 
--- Ensure we have artists who have performed in multiple continents (for query 13)
--- Artist 1 (John Smith) has already performed in different continents
--- Let's ensure they have performances in at least 3 continents
--- First, let's check current performances
--- Since we can't do this in pure SQL easily, we'll just add performances to events in different continents
--- Add some performances for him in the remaining continents if needed
-INSERT INTO Performance (event_id, performance_type, start_time, end_time, artist_id, band_id)
-VALUES 
--- Adding performances in Australia, Africa and additional continents as needed
-(15, 'special guest', '20:00:00', '21:00:00', 1, NULL), -- Sydney (Australia)
-(27, 'special guest', '21:30:00', '22:30:00', 1, NULL), -- Rio (South America)
-(33, 'headline', '23:30:00', '00:30:00', 1, NULL); -- Dubai (Asia)
-
--- Ensure we have music genres with the same number of performances in consecutive years (query 14)
--- First, let's add some specific performances for Rock genre in consecutive years
-INSERT INTO Performance (event_id, performance_type, start_time, end_time, artist_id, band_id)
-VALUES 
--- Rock performances (Genre 1) in 2016
-(5, 'special guest', '19:00:00', '20:00:00', 31, NULL), -- Rock artist in 2016
-(5, 'warm up', '16:30:00', '17:30:00', 46, NULL), -- Rock artist in 2016
-(8, 'special guest', '17:00:00', '18:00:00', 16, NULL), -- Rock artist in 2016
-
--- Rock performances (Genre 1) in 2017
-(12, 'special guest', '19:00:00', '20:00:00', 31, NULL), -- Rock artist in 2017
-(12, 'warm up', '16:30:00', '17:30:00', 46, NULL), -- Rock artist in 2017
-(14, 'special guest', '20:00:00', '21:00:00', 16, NULL); -- Rock artist in 2017
-
--- Finalize the database by removing any stored procedures we might have used
 DROP PROCEDURE IF EXISTS GenerateTickets;
-DROP PROCEDURE IF EXISTS GenerateRatings;-- Use the pulse_university database
+DROP PROCEDURE IF EXISTS GenerateRatings;

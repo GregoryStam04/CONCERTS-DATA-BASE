@@ -59,15 +59,12 @@ CREATE TABLE Stage (
 CREATE TABLE Event (
     event_id INT AUTO_INCREMENT PRIMARY KEY,
     event_name VARCHAR(255) NOT NULL,
-    festival_id INT NOT NULL,
     event_date DATE NOT NULL,
     stage_id INT NOT NULL,
     start_time TIME NOT NULL,
     end_time TIME NOT NULL,
     description TEXT,
-    FOREIGN KEY (festival_id) REFERENCES Festival(festival_id),
     FOREIGN KEY (stage_id) REFERENCES Stage(stage_id),
-    CHECK (end_time > start_time),
     UNIQUE (stage_id, event_date, start_time, end_time)
 );
 
@@ -148,8 +145,7 @@ CREATE TABLE Performance (
     FOREIGN KEY (band_id) REFERENCES Band(band_id),
     FOREIGN KEY (image_id) REFERENCES EntityImage(image_id),
     CHECK ((artist_id IS NULL AND band_id IS NOT NULL) OR (artist_id IS NOT NULL AND band_id IS NULL)),
-    CHECK (TIMEDIFF(end_time, start_time) <= '03:00:00'),
-    CHECK (end_time > start_time)
+    CHECK (TIMEDIFF(end_time, start_time) <= '03:00:00')
 );
 
 -- Staff table
@@ -248,6 +244,17 @@ CREATE TABLE Rating (
     FOREIGN KEY (ticket_id) REFERENCES Ticket(ticket_id),
     FOREIGN KEY (performance_id) REFERENCES Performance(performance_id),
     UNIQUE (ticket_id, performance_id)
+);
+
+CREATE TABLE EventWarnings (
+    warning_id INT AUTO_INCREMENT PRIMARY KEY,
+    event_id INT NOT NULL,
+    warning_type ENUM('SECURITY', 'SUPPORT', 'CAPACITY', 'SCHEDULING') NOT NULL,
+    warning_message TEXT NOT NULL,
+    created_at DATETIME NOT NULL,
+    resolved BOOLEAN DEFAULT FALSE,
+    resolved_at DATETIME,
+    FOREIGN KEY (event_id) REFERENCES Event(event_id)
 );
 
 -- Create indexes for the most frequently used queries
@@ -481,16 +488,20 @@ DELIMITER ;
 
 -- Trigger to ensure security staff is at least 5% of capacity
 DELIMITER //
-CREATE TRIGGER check_security_staff BEFORE INSERT ON Event
+CREATE TRIGGER check_security_staff AFTER INSERT ON Event
 FOR EACH ROW
 BEGIN
     DECLARE stage_capacity INT;
     DECLARE security_count INT DEFAULT 0;
+    DECLARE required_staff INT;
     
     -- Get stage capacity
     SELECT max_capacity INTO stage_capacity
     FROM Stage
     WHERE stage_id = NEW.stage_id;
+    
+    -- Calculate required security staff (at least 5% of capacity)
+    SET required_staff = CEILING(stage_capacity * 0.05);
     
     -- Count security staff for this event
     SELECT COUNT(*) INTO security_count
@@ -498,35 +509,43 @@ BEGIN
     JOIN Staff s ON sa.staff_id = s.staff_id
     WHERE sa.event_id = NEW.event_id AND s.staff_type = 'security';
     
-    IF security_count < CEILING(stage_capacity * 0.05) THEN
-        SIGNAL SQLSTATE '45000' 
-        SET MESSAGE_TEXT = 'Security staff must be at least 5% of stage capacity';
+    -- Insert warning into a log table if security staff is insufficient
+    IF security_count < required_staff THEN
+        INSERT INTO EventWarnings (event_id, warning_type, warning_message, created_at)
+        VALUES (NEW.event_id, 'SECURITY', CONCAT('Security staff insufficient: ', security_count, ' of ', required_staff, ' required'), NOW());
     END IF;
 END//
 DELIMITER ;
 
+
+
 -- Trigger to ensure support staff is at least 2% of capacity
 DELIMITER //
-CREATE TRIGGER check_support_staff BEFORE INSERT ON Event
+CREATE TRIGGER check_support_staff AFTER INSERT ON Event
 FOR EACH ROW
 BEGIN
     DECLARE stage_capacity INT;
     DECLARE support_count INT DEFAULT 0;
+    DECLARE required_staff INT;
     
     -- Get stage capacity
     SELECT max_capacity INTO stage_capacity
     FROM Stage
     WHERE stage_id = NEW.stage_id;
     
-    -- Count support staff for this event
+    -- Calculate required security staff (at least 5% of capacity)
+    SET required_staff = CEILING(stage_capacity * 0.02);
+    
+    -- Count security staff for this event
     SELECT COUNT(*) INTO support_count
     FROM StaffAssignment sa
     JOIN Staff s ON sa.staff_id = s.staff_id
     WHERE sa.event_id = NEW.event_id AND s.staff_type = 'support';
     
-    IF support_count < CEILING(stage_capacity * 0.02) THEN
-        SIGNAL SQLSTATE '45000' 
-        SET MESSAGE_TEXT = 'Support staff must be at least 2% of stage capacity';
+    -- Insert warning into a log table if security staff is insufficient
+    IF support_count < required_staff THEN
+        INSERT INTO EventWarnings (event_id, warning_type, warning_message, created_at)
+        VALUES (NEW.event_id, 'SUPPORT', CONCAT('Support staff insufficient: ', support_count, ' of ', required_staff, ' required'), NOW());
     END IF;
 END//
 DELIMITER ;
