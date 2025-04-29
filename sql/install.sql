@@ -24,7 +24,7 @@ CREATE TABLE Festival (
     end_date DATE NOT NULL,
     location_id INT NOT NULL,
     description TEXT,
-	FOREIGN KEY (image_id) REFERENCES EntityImage(image_id), #image for festival poster
+    FOREIGN KEY (image_id) REFERENCES EntityImage(image_id), --image for festival poster
     FOREIGN KEY (location_id) REFERENCES Location(location_id),
     CHECK (end_date >= start_date)
 );
@@ -129,7 +129,7 @@ CREATE TABLE Performance (
     FOREIGN KEY (event_id) REFERENCES Event(event_id),
     FOREIGN KEY (artist_id) REFERENCES Artist(artist_id),
     FOREIGN KEY (band_id) REFERENCES Band(band_id),
-	FOREIGN KEY (image_id) REFERENCES EntityImage(image_id),
+    FOREIGN KEY (image_id) REFERENCES EntityImage(image_id),
     CHECK ((artist_id IS NULL AND band_id IS NOT NULL) OR (artist_id IS NOT NULL AND band_id IS NULL)),
     CHECK (TIMEDIFF(end_time, start_time) <= '03:00:00'),
     CHECK (end_time > start_time)
