@@ -3,6 +3,17 @@ DROP DATABASE IF EXISTS pulse_university;
 CREATE DATABASE pulse_university;
 USE pulse_university;
 
+-- Images for various entities table
+CREATE TABLE EntityImage (
+    image_id INT AUTO_INCREMENT PRIMARY KEY,
+    entity_type VARCHAR(50) NOT NULL,
+    entity_id INT NOT NULL,
+    image_path VARCHAR(255) NOT NULL,
+    description TEXT,
+    url TEXT,
+    INDEX (entity_type, entity_id)
+);
+
 -- Location table
 CREATE TABLE Location (
     location_id INT AUTO_INCREMENT PRIMARY KEY,
@@ -23,8 +34,9 @@ CREATE TABLE Festival (
     start_date DATE NOT NULL,
     end_date DATE NOT NULL,
     location_id INT NOT NULL,
+    image_id INT NULL,
     description TEXT,
-    FOREIGN KEY (image_id) REFERENCES EntityImage(image_id), --image for festival poster
+    FOREIGN KEY (image_id) REFERENCES EntityImage(image_id),
     FOREIGN KEY (location_id) REFERENCES Location(location_id),
     CHECK (end_date >= start_date)
 );
@@ -37,6 +49,7 @@ CREATE TABLE Stage (
     max_capacity INT NOT NULL,
     technical_equipment TEXT,
     festival_id INT NOT NULL,
+    image_id INT NULL,
     FOREIGN KEY (image_id) REFERENCES EntityImage(image_id),
     FOREIGN KEY (festival_id) REFERENCES Festival(festival_id),
     CHECK (max_capacity > 0)
@@ -46,6 +59,7 @@ CREATE TABLE Stage (
 CREATE TABLE Event (
     event_id INT AUTO_INCREMENT PRIMARY KEY,
     event_name VARCHAR(255) NOT NULL,
+    festival_id INT NOT NULL,
     event_date DATE NOT NULL,
     stage_id INT NOT NULL,
     start_time TIME NOT NULL,
@@ -74,6 +88,7 @@ CREATE TABLE Artist (
     birth_date DATE NOT NULL,
     website VARCHAR(255) NULL,
     instagram VARCHAR(255) NULL,
+    image_id INT NULL,
     FOREIGN KEY (image_id) REFERENCES EntityImage(image_id),
     UNIQUE (artist_name, birth_date)
 );
@@ -85,6 +100,7 @@ CREATE TABLE Band (
     formation_date DATE NOT NULL,
     website VARCHAR(255) NULL,
     instagram VARCHAR(255) NULL,
+    image_id INT NULL,
     FOREIGN KEY (image_id) REFERENCES EntityImage(image_id),
     UNIQUE (band_name)
 );
@@ -126,6 +142,7 @@ CREATE TABLE Performance (
     end_time TIME NOT NULL,
     artist_id INT NULL,
     band_id INT NULL,
+    image_id INT NULL,
     FOREIGN KEY (event_id) REFERENCES Event(event_id),
     FOREIGN KEY (artist_id) REFERENCES Artist(artist_id),
     FOREIGN KEY (band_id) REFERENCES Band(band_id),
@@ -144,6 +161,7 @@ CREATE TABLE Staff (
     staff_type ENUM('technical', 'security', 'support') NOT NULL,
     role VARCHAR(100) NOT NULL,
     experience_level ENUM('trainee', 'beginner', 'intermediate', 'experienced', 'expert') NOT NULL,
+    image_id INT NULL,
     FOREIGN KEY (image_id) REFERENCES EntityImage(image_id)
 );
 
@@ -230,17 +248,6 @@ CREATE TABLE Rating (
     FOREIGN KEY (ticket_id) REFERENCES Ticket(ticket_id),
     FOREIGN KEY (performance_id) REFERENCES Performance(performance_id),
     UNIQUE (ticket_id, performance_id)
-);
-
--- Images for various entities table
-CREATE TABLE EntityImage (
-    image_id INT AUTO_INCREMENT PRIMARY KEY,
-    entity_type VARCHAR(50) NOT NULL,
-    entity_id INT NOT NULL,
-    image_path VARCHAR(255) NOT NULL,
-    description TEXT,
-    url TEXT,
-    INDEX (entity_type, entity_id)
 );
 
 -- Create indexes for the most frequently used queries
