@@ -24,8 +24,7 @@ CREATE TABLE Festival (
     end_date DATE NOT NULL,
     location_id INT NOT NULL,
     description TEXT,
-    poster_image VARCHAR(255),
-    poster_description TEXT,
+	FOREIGN KEY (image_id) REFERENCES EntityImage(image_id), #image for festival poster
     FOREIGN KEY (location_id) REFERENCES Location(location_id),
     CHECK (end_date >= start_date)
 );
@@ -38,8 +37,7 @@ CREATE TABLE Stage (
     max_capacity INT NOT NULL,
     technical_equipment TEXT,
     festival_id INT NOT NULL,
-    stage_image VARCHAR(255),
-    stage_image_description TEXT,
+    FOREIGN KEY (image_id) REFERENCES EntityImage(image_id),
     FOREIGN KEY (festival_id) REFERENCES Festival(festival_id),
     CHECK (max_capacity > 0)
 );
@@ -53,6 +51,7 @@ CREATE TABLE Event (
     start_time TIME NOT NULL,
     end_time TIME NOT NULL,
     description TEXT,
+    FOREIGN KEY (festival_id) REFERENCES Festival(festival_id),
     FOREIGN KEY (stage_id) REFERENCES Stage(stage_id),
     CHECK (end_time > start_time),
     UNIQUE (stage_id, event_date, start_time, end_time)
@@ -75,8 +74,7 @@ CREATE TABLE Artist (
     birth_date DATE NOT NULL,
     website VARCHAR(255) NULL,
     instagram VARCHAR(255) NULL,
-    artist_image VARCHAR(255),
-    artist_description TEXT,
+    FOREIGN KEY (image_id) REFERENCES EntityImage(image_id),
     UNIQUE (artist_name, birth_date)
 );
 
@@ -87,8 +85,7 @@ CREATE TABLE Band (
     formation_date DATE NOT NULL,
     website VARCHAR(255) NULL,
     instagram VARCHAR(255) NULL,
-    band_image VARCHAR(255),
-    band_description TEXT,
+    FOREIGN KEY (image_id) REFERENCES EntityImage(image_id),
     UNIQUE (band_name)
 );
 
@@ -132,6 +129,7 @@ CREATE TABLE Performance (
     FOREIGN KEY (event_id) REFERENCES Event(event_id),
     FOREIGN KEY (artist_id) REFERENCES Artist(artist_id),
     FOREIGN KEY (band_id) REFERENCES Band(band_id),
+	FOREIGN KEY (image_id) REFERENCES EntityImage(image_id),
     CHECK ((artist_id IS NULL AND band_id IS NOT NULL) OR (artist_id IS NOT NULL AND band_id IS NULL)),
     CHECK (TIMEDIFF(end_time, start_time) <= '03:00:00'),
     CHECK (end_time > start_time)
@@ -146,8 +144,7 @@ CREATE TABLE Staff (
     staff_type ENUM('technical', 'security', 'support') NOT NULL,
     role VARCHAR(100) NOT NULL,
     experience_level ENUM('trainee', 'beginner', 'intermediate', 'experienced', 'expert') NOT NULL,
-    staff_image VARCHAR(255),
-    staff_description TEXT
+    FOREIGN KEY (image_id) REFERENCES EntityImage(image_id)
 );
 
 -- Staff Assignment table
@@ -242,6 +239,7 @@ CREATE TABLE EntityImage (
     entity_id INT NOT NULL,
     image_path VARCHAR(255) NOT NULL,
     description TEXT,
+    url TEXT,
     INDEX (entity_type, entity_id)
 );
 
