@@ -2,6 +2,7 @@
 SELECT 
     a.artist_id,
     a.artist_name,
+    f.festival_id,
     f.festival_name,
     COUNT(*) AS warm_up_count
 FROM 

@@ -13,6 +13,6 @@ FROM
 WHERE 
     TIMESTAMPDIFF(YEAR, a.birth_date, CURDATE()) < 30
 GROUP BY 
-    a.artist_id, a.artist_name
+    a.artist_id, a.artist_name, a.birth_date
 ORDER BY 
-    festival_count DESC;
+    festival_count DESC, a.artist_name;

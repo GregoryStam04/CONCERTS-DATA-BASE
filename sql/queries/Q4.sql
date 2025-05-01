@@ -9,7 +9,7 @@ FROM
     JOIN Performance p ON a.artist_id = p.artist_id
     JOIN Rating r ON p.performance_id = r.performance_id
 WHERE 
-    a.artist_id = 1  -- Replace with specific artist ID
+    a.artist_id = 4  -- Replace with specific artist ID
 GROUP BY 
     a.artist_id, a.artist_name;
 
@@ -20,7 +20,7 @@ SELECT
     AVG(r.artist_performance) AS avg_artist_performance,
     AVG(r.overall_impression) AS avg_overall_impression
 FROM 
-    Artist a
+    Artist a,
     JOIN Performance p FORCE INDEX (idx_performance_artist) ON a.artist_id = p.artist_id
     JOIN Rating r FORCE INDEX (idx_rating_ticket) ON p.performance_id = r.performance_id
 WHERE 

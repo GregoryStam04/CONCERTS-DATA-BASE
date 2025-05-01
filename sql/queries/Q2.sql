@@ -1,3 +1,4 @@
+-- Query 2: Find all artists of a specific genre with indication if they participated in a specific year's festival
 SELECT 
     a.artist_id,
     a.artist_name,
