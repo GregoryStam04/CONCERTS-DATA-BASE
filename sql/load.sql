@@ -11,8 +11,8 @@ INSERT INTO EntityImage (entity_type, entity_id, image_path, description, url) V
 (1, 6, '/images/festivals/pulse2020.jpg', 'Pulse Festival 2020 Poster', 'https://pulse-university.com/images/2020/poster'),
 (1, 7, '/images/festivals/pulse2021.jpg', 'Pulse Festival 2021 Poster', 'https://pulse-university.com/images/2021/poster'),
 (1, 8, '/images/festivals/pulse2022.jpg', 'Pulse Festival 2022 Poster', 'https://pulse-university.com/images/2022/poster'),
-(1, 9, '/images/festivals/pulse2023.jpg', 'Pulse Festival 2023 Poster', 'https://pulse-university.com/images/2023/poster'),
-(1, 10, '/images/festivals/pulse2024.jpg', 'Pulse Festival 2024 Poster', 'https://pulse-university.com/images/2024/poster'),
+(1, 9, '/images/festivals/pulse2026.jpg', 'Pulse Festival 2026 Poster', 'https://pulse-university.com/images/2026/poster'),
+(1, 10, '/images/festivals/pulse2027.jpg', 'Pulse Festival 2027 Poster', 'https://pulse-university.com/images/2027/poster'),
 (2, 1, '/images/artists/john_doe.jpg', 'John Doe portrait', 'https://pulse-university.com/images/artists/john_doe'),
 (2, 2, '/images/artists/jane_smith.jpg', 'Jane Smith portrait', 'https://pulse-university.com/images/artists/jane_smith'),
 (2, 3, '/images/artists/mike_johnson.jpg', 'Mike Johnson portrait', 'https://pulse-university.com/images/artists/mike_johnson'),
@@ -52,8 +52,8 @@ INSERT INTO Festival (festival_name, start_date, end_date, location_id, descript
 ('Pulse University 2020', '2020-07-16', '2020-07-19', 6, 'South American debut featuring many local talents'),
 ('Pulse University 2021', '2021-07-14', '2021-07-18', 7, 'Post-pandemic comeback with record attendance'),
 ('Pulse University 2022', '2022-07-20', '2022-07-24', 8, 'Middle Eastern edition with cultural fusion themes'),
-('Pulse University 2024', '2024-08-15', '2024-08-19', 9, 'Celebrating a decade of music with all-star lineup'),
-('Pulse University 2025', '2025-07-16', '2025-07-20', 10, 'Future festival with cutting-edge technology integration');
+('Pulse University 2026', '2026-08-15', '2026-08-19', 9, 'Celebrating a decade of music with all-star lineup'),
+('Pulse University 2027', '2027-07-16', '2027-07-20', 10, 'Future festival with cutting-edge technology integration');
 
 -- Insert Musical Genres
 INSERT INTO Genre (genre_name, parent_genre_id) VALUES
@@ -439,19 +439,19 @@ INSERT INTO Event (event_name, event_date, stage_id, start_time, end_time, descr
 ('Electronic Sands', '2022-07-23', 18, '21:00:00', '03:00:00', 'Electronic music showcase'),
 ('Golden Finale', '2022-07-24', 17, '18:00:00', '00:00:00', 'Closing celebration'),
 
--- Festival 9 events (2024 - Future)
-('New York Opening', '2024-08-15', 19, '18:00:00', '23:00:00', 'Big Apple welcome night'),
-('Brooklyn Beats', '2024-08-16', 20, '19:00:00', '01:00:00', 'Hip hop and urban music'),
-('Central Park Day', '2024-08-17', 19, '14:00:00', '22:00:00', 'All-day music festival'),
-('Urban Sounds', '2024-08-18', 20, '16:00:00', '23:00:00', 'City-inspired performances'),
-('Anniversary Closing', '2024-08-19', 19, '17:00:00', '00:00:00', 'Special 10-year celebration'),
+-- Festival 9 events (2026 - Future)
+('New York Opening', '2026-08-15', 19, '18:00:00', '23:00:00', 'Big Apple welcome night'),
+('Brooklyn Beats', '2026-08-16', 20, '19:00:00', '01:00:00', 'Hip hop and urban music'),
+('Central Park Day', '2026-08-17', 19, '14:00:00', '22:00:00', 'All-day music festival'),
+('Urban Sounds', '2026-08-18', 20, '16:00:00', '23:00:00', 'City-inspired performances'),
+('Anniversary Closing', '2026-08-19', 19, '17:00:00', '00:00:00', 'Special 10-year celebration'),
 
--- Festival 10 events (2025 - Future)
-('Hong Kong Harmony', '2025-07-16', 21, '19:00:00', '00:00:00', 'Opening night by the harbor'),
-('East Meets West', '2025-07-17', 22, '18:00:00', '23:00:00', 'Cultural fusion performances'),
-('Asian Showcase', '2025-07-18', 21, '17:00:00', '23:00:00', 'Top Asian artists'),
-('Electronic Asia', '2025-07-19', 22, '20:00:00', '02:00:00', 'Modern electronic music'),
-('Farewell from Hong Kong', '2025-07-20', 21, '18:00:00', '00:00:00', 'Final celebration');
+-- Festival 10 events (2027 - Future)
+('Hong Kong Harmony', '2027-07-16', 21, '19:00:00', '00:00:00', 'Opening night by the harbor'),
+('East Meets West', '2027-07-17', 22, '18:00:00', '23:00:00', 'Cultural fusion performances'),
+('Asian Showcase', '2027-07-18', 21, '17:00:00', '23:00:00', 'Top Asian artists'),
+('Electronic Asia', '2027-07-19', 22, '20:00:00', '02:00:00', 'Modern electronic music'),
+('Farewell from Hong Kong', '2027-07-20', 21, '18:00:00', '00:00:00', 'Final celebration');
 
 -- Insert Staff Assignments
 -- For each event, assign appropriate staff (at least 5% security and 2% support based on venue capacity)
