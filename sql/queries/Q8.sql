@@ -12,5 +12,5 @@ WHERE
         SELECT sa.staff_id
         FROM StaffAssignment sa
         JOIN Event e ON sa.event_id = e.event_id
-        WHERE e.event_date = '2024-08-01'  -- Replace with specific date
+        WHERE e.event_date = '2016-07-20'  -- Replace with specific date
     );

@@ -1087,10 +1087,10 @@ VALUES
 (3, 2, 1, '2015-06-15', 75.00, 'credit_card', '0000000000203', TRUE, FALSE),
 (4, 2, 1, '2015-06-15', 75.00, 'credit_card', '0000000000204', TRUE, FALSE),
 
-(5, 3, 1, '2016-06-15', 80.00, 'debit_card', '0000000000301', TRUE, FALSE),
-(6, 3, 1, '2016-06-15', 80.00, 'debit_card', '0000000000302', TRUE, FALSE),
-(7, 3, 1, '2016-06-15', 80.00, 'debit_card', '0000000000303', TRUE, FALSE),
-(9, 3, 1, '2016-06-15', 80.00, 'debit_card', '0000000000304', TRUE, FALSE),
+(1, 3, 1, '2015-06-15', 80.00, 'debit_card', '0000000000301', TRUE, FALSE),
+(2, 3, 1, '2015-06-15', 80.00, 'debit_card', '0000000000302', TRUE, FALSE),
+(3, 3, 1, '2015-06-15', 80.00, 'debit_card', '0000000000303', TRUE, FALSE),
+(4, 3, 1, '2015-06-15', 80.00, 'debit_card', '0000000000304', TRUE, FALSE),
 
 -- Visitor 4 and 5 will have the same number of tickets (different from 2 and 3)
 (10, 4, 1, '2017-06-15', 85.00, 'bank_transfer', '0000000000401', TRUE, FALSE),
@@ -1099,11 +1099,11 @@ VALUES
 (13, 4, 1, '2017-06-15', 85.00, 'bank_transfer', '0000000000404', TRUE, FALSE),
 (14, 4, 1, '2017-06-15', 85.00, 'bank_transfer', '0000000000405', TRUE, FALSE),
 
-(15, 5, 1, '2018-06-15', 90.00, 'credit_card', '0000000000501', TRUE, FALSE),
-(16, 5, 1, '2018-06-15', 90.00, 'credit_card', '0000000000502', TRUE, FALSE),
-(17, 5, 1, '2018-06-15', 90.00, 'credit_card', '0000000000503', TRUE, FALSE),
-(18, 5, 1, '2018-06-15', 90.00, 'credit_card', '0000000000504', TRUE, FALSE),
-(19, 5, 1, '2018-06-15', 90.00, 'credit_card', '0000000000505', TRUE, FALSE);
+(10, 5, 1, '2017-06-15', 90.00, 'credit_card', '0000000000501', TRUE, FALSE),
+(11, 5, 1, '2017-06-15', 90.00, 'credit_card', '0000000000502', TRUE, FALSE),
+(12, 5, 1, '2017-06-15', 90.00, 'credit_card', '0000000000503', TRUE, FALSE),
+(13, 5, 1, '2017-06-15', 90.00, 'credit_card', '0000000000504', TRUE, FALSE),
+(14, 5, 1, '2017-06-15', 90.00, 'credit_card', '0000000000505', TRUE, FALSE);
 
 DROP PROCEDURE IF EXISTS GenerateTickets;
 DROP PROCEDURE IF EXISTS GenerateRatings;
