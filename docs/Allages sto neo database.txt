@@ -6,3 +6,6 @@ bazw foreign keys gia ola ta entities se image_id me url kai description
 5/1/25: 
 greg: evala duo festival sto mellon
     provlima --> den exw dedomena gia query 3 -- kaneis den kanei warm up duo fores
+
+george: q11: χρειάζεται προσθήκη performances για κάποιον καλλιτέχνη, ώστε να μπορεί να επιστρέφει κάτι το query
+        q12: χρειάζεται προσθήκη staffassignment για όσα events δεν έχουν staff ακόμα
