@@ -154,9 +154,9 @@ CREATE TABLE Staff (
     first_name VARCHAR(100) NOT NULL,
     last_name VARCHAR(100) NOT NULL,
     birth_date DATE NOT NULL,
-    staff_type ENUM('technical', 'security', 'support') NOT NULL,
+    staff_type VARCHAR(100) NOT NULL,
     role VARCHAR(100) NOT NULL,
-    experience_level ENUM('trainee', 'beginner', 'intermediate', 'experienced', 'expert') NOT NULL,
+    experience_level VARCHAR(100) NOT NULL,
     image_id INT NULL,
     FOREIGN KEY (image_id) REFERENCES EntityImage(image_id)
 );
@@ -197,7 +197,7 @@ CREATE TABLE Ticket (
     category_id INT NOT NULL,
     purchase_date DATETIME NOT NULL,
     price DECIMAL(10, 2) NOT NULL,
-    payment_method ENUM('credit_card', 'debit_card', 'bank_transfer') NOT NULL,
+    payment_method VARCHAR(100) NOT NULL,
     ean_code CHAR(13) NOT NULL,
     is_used BOOLEAN DEFAULT FALSE,
     is_for_resale BOOLEAN DEFAULT FALSE,
@@ -249,7 +249,7 @@ CREATE TABLE Rating (
 CREATE TABLE EventWarnings (
     warning_id INT AUTO_INCREMENT PRIMARY KEY,
     event_id INT NOT NULL,
-    warning_type ENUM('SECURITY', 'SUPPORT', 'CAPACITY', 'SCHEDULING') NOT NULL,
+    warning_type VARCHAR(100) NOT NULL,
     warning_message TEXT NOT NULL,
     created_at DATETIME NOT NULL,
     resolved BOOLEAN DEFAULT FALSE,
