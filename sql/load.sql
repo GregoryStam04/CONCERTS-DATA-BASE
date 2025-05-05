@@ -297,39 +297,39 @@ INSERT INTO BandGenre (band_id, genre_id) VALUES
 
 -- Insert Stages (venues)
 INSERT INTO Stage (stage_name, description, max_capacity, technical_equipment, festival_id) VALUES
-('Main Stage', 'Primary venue with state-of-the-art sound system', 25000, 'Advanced lighting, 6 speaker towers, LED screens', 1),
-('Electronica Dome', 'Indoor venue for electronic music', 8000, 'DJ equipment, laser lights, fog machines', 1),
-('Acoustic Haven', 'Intimate setting for acoustic performances', 3000, 'Minimal setup, acoustic-friendly environment', 1),
-('Rock Arena', 'Open-air venue for rock bands', 15000, 'Heavy-duty sound system, pyrotechnics', 2),
+('Main Stage', 'Primary venue with state-of-the-art sound system', 500, 'Advanced lighting, 6 speaker towers, LED screens', 1),
+('Electronica Dome', 'Indoor venue for electronic music', 800, 'DJ equipment, laser lights, fog machines', 1),
+('Acoustic Haven', 'Intimate setting for acoustic performances', 1000, 'Minimal setup, acoustic-friendly environment', 1),
+('Rock Arena', 'Open-air venue for rock bands', 1000, 'Heavy-duty sound system, pyrotechnics', 2),
 ('Jazz Corner', 'Elegant space for jazz performances', 2000, 'Vintage microphones, subtle lighting', 2),
 ('Hip Hop Square', 'Urban-styled venue', 10000, 'Bass-heavy sound system, graffiti backdrop', 2),
-('Tokyo Main', 'Large venue in the center of festival grounds', 20000, 'High-tech lighting, surround sound', 3),
-('Anime Stage', 'Japanese pop culture themed stage', 5000, 'Visual displays, animated backdrops', 3),
-('Sydney Harbor Stage', 'Waterfront main venue', 18000, 'Weather-resistant equipment, boat accessibility', 4),
-('Outback Stage', 'Australian-themed venue', 7500, 'Rustic setup, natural acoustics', 4),
-('Red Square', 'Central Moscow venue', 22000, 'Historic setting, advanced sound', 5),
-('Winter Palace', 'Elegant indoor venue', 6000, 'Classical architecture, perfect acoustics', 5),
-('Copacabana Stage', 'Beachfront main venue', 30000, 'Sand-resistant equipment, beach party setup', 6),
-('Samba Arena', 'Brazilian carnival atmosphere', 12000, 'Parade floats, festive lighting', 6),
-('Montreal Main', 'Central festival grounds', 25000, 'Bilingual displays, maple leaf motifs', 7),
-('Quebec Stage', 'French-Canadian themed', 9000, 'Cultural decor, local sound engineers', 7),
-('Desert Oasis', 'Main stage in Dubai', 20000, 'Heat-resistant equipment, cooling systems', 8),
-('Gold Pavilion', 'Luxury-themed venue', 5000, 'Premium sound, VIP areas', 8),
-('Central Park Stage', 'New Yorks iconic location', 35000, 'Urban backdrop , city skyline views', 9),
-('Brooklyn Arena', 'Industrial-styled venue', 15000, 'Warehouse aesthetics, graffiti art', 9),
-('Victoria Harbor', 'Hong Kong waterfront', 28000, 'Light show capabilities, harbor views', 10),
-('Kowloon Stage', 'Cultural fusion venue', 12000, 'East meets West design, traditional elements', 10);
+('Tokyo Main', 'Large venue in the center of festival grounds', 2000, 'High-tech lighting, surround sound', 3),
+('Anime Stage', 'Japanese pop culture themed stage', 300, 'Visual displays, animated backdrops', 3),
+('Sydney Harbor Stage', 'Waterfront main venue', 500, 'Weather-resistant equipment, boat accessibility', 4),
+('Outback Stage', 'Australian-themed venue', 750, 'Rustic setup, natural acoustics', 4),
+('Red Square', 'Central Moscow venue', 300, 'Historic setting, advanced sound', 5),
+('Winter Palace', 'Elegant indoor venue', 600, 'Classical architecture, perfect acoustics', 5),
+('Copacabana Stage', 'Beachfront main venue', 300, 'Sand-resistant equipment, beach party setup', 6),
+('Samba Arena', 'Brazilian carnival atmosphere', 1200, 'Parade floats, festive lighting', 6),
+('Montreal Main', 'Central festival grounds', 2000, 'Bilingual displays, maple leaf motifs', 7),
+('Quebec Stage', 'French-Canadian themed', 3000, 'Cultural decor, local sound engineers', 7),
+('Desert Oasis', 'Main stage in Dubai', 2000, 'Heat-resistant equipment, cooling systems', 8),
+('Gold Pavilion', 'Luxury-themed venue', 520, 'Premium sound, VIP areas', 8),
+('Central Park Stage', 'New Yorks iconic location', 400, 'Urban backdrop , city skyline views', 9),
+('Brooklyn Arena', 'Industrial-styled venue', 1500, 'Warehouse aesthetics, graffiti art', 9),
+('Victoria Harbor', 'Hong Kong waterfront', 280, 'Light show capabilities, harbor views', 10),
+('Kowloon Stage', 'Cultural fusion venue', 600, 'East meets West design, traditional elements', 10);
 
 -- Insert additional stages to reach 30 total
 INSERT INTO Stage (stage_name, description, max_capacity, technical_equipment, festival_id) VALUES
-('Alternative Grounds', 'Venue for alternative and indie bands', 8000, 'Vintage amps, indie aesthetic', 1),
-('Electronic Wonderland', 'Immersive experience for electronic music', 10000, '3D mapping, interactive elements', 3),
-('Classical Pavilion', 'Venue designed for orchestral performances', 4000, 'Perfect acoustics, orchestra pit', 5),
-('Reggae Bay', 'Caribbean-themed stage for reggae artists', 7000, 'Island decor, specialized bass equipment', 7),
-('Metal Forge', 'Heavy metal dedicated stage', 9000, 'Fire effects, dark atmosphere', 2),
-('Folk Forest', 'Nature-inspired venue for folk music', 3500, 'Natural amphitheater, woodland setting', 4),
-('Urban Beat Box', 'Street culture inspired stage', 6000, 'Graffiti walls, street dance floor', 6),
-('Sunset Stage', 'Western-facing stage for evening performances', 5000, 'Special sunset lighting, golden hour effects', 8);
+('Alternative Grounds', 'Venue for alternative and indie bands', 700, 'Vintage amps, indie aesthetic', 1),
+('Electronic Wonderland', 'Immersive experience for electronic music', 200, '3D mapping, interactive elements', 3),
+('Classical Pavilion', 'Venue designed for orchestral performances', 400, 'Perfect acoustics, orchestra pit', 5),
+('Reggae Bay', 'Caribbean-themed stage for reggae artists', 700, 'Island decor, specialized bass equipment', 7),
+('Metal Forge', 'Heavy metal dedicated stage', 900, 'Fire effects, dark atmosphere', 2),
+('Folk Forest', 'Nature-inspired venue for folk music', 350, 'Natural amphitheater, woodland setting', 4),
+('Urban Beat Box', 'Street culture inspired stage', 600, 'Graffiti walls, street dance floor', 6),
+('Sunset Stage', 'Western-facing stage for evening performances', 500, 'Special sunset lighting, golden hour effects', 8);
 
 -- Insert Staff
 INSERT INTO Staff (first_name, last_name, birth_date, staff_type, role, experience_level) VALUES
@@ -337,14 +337,14 @@ INSERT INTO Staff (first_name, last_name, birth_date, staff_type, role, experien
 ('James', 'Williams', '1985-05-15', 'technical', 'Sound Engineer', 'expert'),
 ('Maria', 'Garcia', '1990-07-22', 'technical', 'Lighting Technician', 'experienced'),
 ('Robert', 'Johnson', '1988-03-10', 'technical', 'Stage Manager', 'expert'),
-('Lisa', 'Chen', '1993-09-18', 'technical', 'Audio Technician', 'intermediate'),
-('David', 'Smith', '1987-11-30', 'technical', 'Visual Effects', 'experienced'),
+('Lisa', 'Chen', '1993-09-18', 'technical', 'Audio Technician', 'beginner'),
+('David', 'Smith', '1987-11-30', 'technical', 'Visual Effects', 'beginner'),
 ('Emily', 'Taylor', '1995-02-25', 'technical', 'Equipment Manager', 'intermediate'),
 ('Michael', 'Brown', '1982-06-14', 'technical', 'Production Manager', 'expert'),
 ('Sophia', 'Lee', '1991-04-09', 'technical', 'Camera Operator', 'intermediate'),
 ('Daniel', 'Martinez', '1989-08-12', 'technical', 'Sound Assistant', 'beginner'),
 ('Olivia', 'Wilson', '1997-01-28', 'technical', 'Lighting Assistant', 'trainee'),
-('Thomas', 'Anderson', '1984-12-03', 'technical', 'Technical Director', 'expert'),
+('Thomas', 'Anderson', '1984-12-03', 'technical', 'Technical Director', 'beginner'),
 ('Emma', 'Lopez', '1992-05-17', 'technical', 'LED Screen Technician', 'intermediate'),
 ('William', 'Harris', '1986-10-20', 'technical', 'Pyrotechnics Specialist', 'experienced'),
 ('Ava', 'Clark', '1994-03-15', 'technical', 'Rigging Technician', 'beginner'),
@@ -482,77 +482,6 @@ INSERT INTO Event (event_name, event_date, stage_id, start_time, end_time, descr
 ('Asian Showcase', '2027-07-18', 21, '17:00:00', '23:00:00', 'Top Asian artists'),
 ('Electronic Asia', '2027-07-19', 22, '20:00:00', '02:00:00', 'Modern electronic music'),
 ('Farewell from Hong Kong', '2027-07-20', 21, '18:00:00', '00:00:00', 'Final celebration');
-
--- Insert Staff Assignments
--- For each event, assign appropriate staff (at least 5% security and 2% support based on venue capacity)
-INSERT INTO StaffAssignment (staff_id, event_id) VALUES
--- Opening Night (Festival 1, 2015) - Main Stage (25,000 capacity)
--- Need at least 1250 security and 500 support staff
-(1, 1), (2, 1), (3, 1), (4, 1), (5, 1), -- Technical staff
-(16, 1), (17, 1), (18, 1), (19, 1), (20, 1), (21, 1), (22, 1), (23, 1), (24, 1), (25, 1), (26, 1), (27, 1), (28, 1), (29, 1), (30, 1), -- Security staff (15)
-(31, 1), (32, 1), (33, 1), (34, 1), (35, 1), (36, 1), (37, 1), (38, 1), -- Support staff (8)
-
--- Electronic Friday (Festival 1, 2015) - Electronica Dome (8,000 capacity)
--- Need at least 400 security and 160 support staff
-(6, 2), (7, 2), (8, 2), (9, 2), -- Technical staff
-(16, 2), (17, 2), (18, 2), (19, 2), (20, 2), (21, 2), -- Security staff (6)
-(31, 2), (32, 2), (33, 2), -- Support staff (3)
-
--- Acoustic Saturday (Festival 1, 2015) - Acoustic Haven (3,000 capacity)
--- Need at least 150 security and 60 support staff
-(10, 3), (11, 3), (12, 3), -- Technical staff
-(22, 3), (23, 3), (24, 3), -- Security staff (3)
-(34, 3), (35, 3), -- Support staff (2)
-
--- Closing Party (Festival 1, 2015) - Main Stage (25,000 capacity)
-(1, 4), (2, 4), (3, 4), (4, 4), (5, 4), -- Technical staff
-(16, 4), (17, 4), (18, 4), (19, 4), (20, 4), (21, 4), (22, 4), (23, 4), (24, 4), (25, 4), (26, 4), (27, 4), (28, 4), (29, 4), (30, 4), -- Security staff (15)
-(31, 4), (32, 4), (33, 4), (34, 4), (35, 4), (36, 4), (37, 4), (38, 4), -- Support staff (8)
-
--- Rock Opening (Festival 2, 2016) - Rock Arena (15,000 capacity)
--- Need at least 750 security and 300 support staff
-(1, 5), (2, 5), (3, 5), (4, 5), -- Technical staff
-(16, 5), (17, 5), (18, 5), (19, 5), (20, 5), (21, 5), (22, 5), (23, 5), (24, 5), -- Security staff (9)
-(31, 5), (32, 5), (33, 5), (34, 5), -- Support staff (4)
-
--- Jazz Night (Festival 2, 2016) - Jazz Corner (2,000 capacity)
--- Need at least 100 security and 40 support staff
-(5, 6), (6, 6), -- Technical staff
-(25, 6), (26, 6), -- Security staff (2)
-(35, 6), -- Support staff (1)
-
--- Hip Hop Showcase (Festival 2, 2016) - Hip Hop Square (10,000 capacity)
--- Need at least 500 security and 200 support staff
-(7, 7), (8, 7), (9, 7), -- Technical staff
-(16, 7), (17, 7), (18, 7), (19, 7), (20, 7), (21, 7), -- Security staff (6)
-(36, 7), (37, 7), (38, 7), -- Support staff (3)
-
--- Tokyo Lights (Festival 3, 2017) - Tokyo Main (20,000 capacity)
--- Need at least 1000 security and 400 support staff
-(1, 11), (2, 11), (3, 11), (4, 11), (5, 11), -- Technical staff
-(16, 11), (17, 11), (18, 11), (19, 11), (20, 11), (21, 11), (22, 11), (23, 11), (24, 11), (25, 11), -- Security staff (10)
-(31, 11), (32, 11), (33, 11), (34, 11), (35, 11), (36, 11), -- Support staff (6)
-
--- J-Pop Explosion (Festival 3, 2017) - Anime Stage (5,000 capacity)
--- Need at least 250 security and 100 support staff
-(6, 12), (7, 12), -- Technical staff
-(26, 12), (27, 12), (28, 12), -- Security staff (3)
-(37, 12), (38, 12), -- Support staff (2)
-
--- Grand Finale (Festival 2, 2016) - Hip Hop Square (10,000 capacity)
-(10, 10), (11, 10), (12, 10), -- Technical staff
-(16, 10), (17, 10), (18, 10), (19, 10), (20, 10), (21, 10), -- Security staff (6)
-(31, 10), (32, 10), (33, 10), -- Support staff (3)
-
--- Desert Welcome (Festival 8, 2022) - Desert Oasis (20,000 capacity)
-(1, 36), (2, 36), (3, 36), (4, 36), (5, 36), -- Technical staff
-(16, 36), (17, 36), (18, 36), (19, 36), (20, 36), (21, 36), (22, 36), (23, 36), (24, 36), (25, 36), -- Security staff (10)
-(31, 36), (32, 36), (33, 36), (34, 36), (35, 36), (36, 36), -- Support staff (6)
-
--- Golden Finale (Festival 8, 2022) - Desert Oasis (20,000 capacity)
-(6, 40), (7, 40), (8, 40), (9, 40), (10, 40), -- Technical staff
-(16, 40), (17, 40), (18, 40), (19, 40), (20, 40), (21, 40), (22, 40), (23, 40), (24, 40), (25, 40), -- Security staff (10)
-(31, 40), (32, 40), (33, 40), (34, 40), (35, 40), (36, 40); -- Support staff (6)
 
 -- Insert Performances
 -- We need to create at least 100 performances across various events
@@ -896,6 +825,147 @@ INSERT INTO TicketCategory (category_name) VALUES
 ('vip'),
 ('backstage');
 
+-- Assign Staff to Events
+-- Create a procedure to automatically assign staff to events based on the requirements
+DELIMITER //
+
+CREATE PROCEDURE AssignStaffToEvents()
+BEGIN
+    DECLARE done INT DEFAULT FALSE;
+    DECLARE event_id_var INT;
+    DECLARE capacity_var INT;
+    DECLARE required_security INT;
+    DECLARE required_support INT;
+    DECLARE required_technical INT; 
+    DECLARE current_security INT;
+    DECLARE current_support INT;
+    DECLARE current_technical INT;
+    DECLARE security_to_add INT;
+    DECLARE support_to_add INT;
+    DECLARE technical_to_add INT;
+    DECLARE staff_counter INT;
+    
+    -- Cursor for events
+    DECLARE event_cursor CURSOR FOR 
+        SELECT e.event_id, s.max_capacity
+        FROM Event e
+        JOIN Stage s ON e.stage_id = s.stage_id
+        ORDER BY e.event_id;
+    
+    DECLARE CONTINUE HANDLER FOR NOT FOUND SET done = TRUE;
+    
+    OPEN event_cursor;
+    
+    read_loop: LOOP
+        FETCH event_cursor INTO event_id_var, capacity_var;
+        
+        IF done THEN
+            LEAVE read_loop;
+        END IF;
+        
+        -- Calculate required staff
+        SET required_security = CEILING(capacity_var * 0.05);
+        SET required_support = CEILING(capacity_var * 0.02);
+        SET required_technical = CEILING(capacity_var * 0.03); -- Assume 3% technical staff requirement
+        
+        -- Get current staff count
+        SELECT COUNT(*) INTO current_security
+        FROM StaffAssignment sa
+        JOIN Staff s ON sa.staff_id = s.staff_id
+        WHERE sa.event_id = event_id_var AND s.staff_type = 'security';
+        
+        SELECT COUNT(*) INTO current_support
+        FROM StaffAssignment sa
+        JOIN Staff s ON sa.staff_id = s.staff_id
+        WHERE sa.event_id = event_id_var AND s.staff_type = 'support';
+
+        SELECT COUNT(*) INTO current_technical
+        FROM StaffAssignment sa
+        JOIN Staff s ON sa.staff_id = s.staff_id
+        WHERE sa.event_id = event_id_var AND s.staff_type = 'technical';
+        
+        -- Calculate how many staff to add
+        SET security_to_add = GREATEST(0, required_security - current_security);
+        SET support_to_add = GREATEST(0, required_support - current_support);
+        SET technical_to_add = GREATEST(0, required_technical - current_technical);
+        
+        -- Add security staff
+        IF security_to_add > 0 THEN
+            SET staff_counter = 0;
+            
+            INSERT INTO StaffAssignment (staff_id, event_id)
+            SELECT s.staff_id, event_id_var
+            FROM Staff s
+            WHERE s.staff_type = 'security'
+            AND NOT EXISTS (SELECT 1 FROM StaffAssignment sa WHERE sa.staff_id = s.staff_id AND sa.event_id = event_id_var)
+            LIMIT security_to_add;
+        END IF;
+        
+        -- Add support staff
+        IF support_to_add > 0 THEN
+            SET staff_counter = 0;
+            
+            INSERT INTO StaffAssignment (staff_id, event_id)
+            SELECT s.staff_id, event_id_var
+            FROM Staff s
+            WHERE s.staff_type = 'support'
+            AND NOT EXISTS (SELECT 1 FROM StaffAssignment sa WHERE sa.staff_id = s.staff_id AND sa.event_id = event_id_var)
+            LIMIT support_to_add;
+        END IF;
+
+        -- Add technical staff
+        IF technical_to_add > 0 THEN
+            SET staff_counter = 0;
+            
+            INSERT INTO StaffAssignment (staff_id, event_id)
+            SELECT s.staff_id, event_id_var
+            FROM Staff s
+            WHERE s.staff_type = 'technical'
+            AND NOT EXISTS (SELECT 1 FROM StaffAssignment sa WHERE sa.staff_id = s.staff_id AND sa.event_id = event_id_var)
+            LIMIT technical_to_add;
+        END IF;
+    END LOOP;
+    
+    CLOSE event_cursor;
+END //
+
+DELIMITER ;
+
+-- Call the procedure to assign staff
+CALL AssignStaffToEvents();
+
+-- If after assigning all available staff, there are still events without enough staff,
+-- adjust the stage capacities to meet the requirements
+UPDATE Stage s
+JOIN (
+    SELECT s.stage_id, s.max_capacity,
+           COUNT(DISTINCT sa.staff_id) AS security_count
+    FROM Stage s
+    JOIN Event e ON s.stage_id = e.stage_id
+    LEFT JOIN StaffAssignment sa ON e.event_id = sa.event_id
+    LEFT JOIN Staff st ON sa.staff_id = st.staff_id AND st.staff_type = 'security'
+    GROUP BY s.stage_id, s.max_capacity
+    HAVING COUNT(DISTINCT sa.staff_id) < CEILING(s.max_capacity * 0.05)
+) AS subq ON s.stage_id = subq.stage_id
+SET s.max_capacity = FLOOR(subq.security_count / 0.05);
+
+-- Also adjust for support staff requirements
+UPDATE Stage s
+JOIN (
+    SELECT s.stage_id, s.max_capacity,
+           COUNT(DISTINCT sa.staff_id) AS support_count
+    FROM Stage s
+    JOIN Event e ON s.stage_id = e.stage_id
+    LEFT JOIN StaffAssignment sa ON e.event_id = sa.event_id
+    LEFT JOIN Staff st ON sa.staff_id = st.staff_id AND st.staff_type = 'support'
+    GROUP BY s.stage_id, s.max_capacity
+    HAVING COUNT(DISTINCT sa.staff_id) < CEILING(s.max_capacity * 0.02)
+) AS subq ON s.stage_id = subq.stage_id
+SET s.max_capacity = FLOOR(subq.support_count / 0.02);
+
+-- Cleanup - drop the procedure
+DROP PROCEDURE IF EXISTS AssignStaffToEvents;
+
 -- Insert Tickets (at least 200 tickets)
 -- First, let's create a procedure to generate the tickets with proper EAN codes
 DELIMITER //
@@ -1134,6 +1204,3 @@ VALUES
 (12, 5, 1, '2017-06-15', 90.00, 'credit_card', '0000000000503', TRUE, FALSE),
 (13, 5, 1, '2017-06-15', 90.00, 'credit_card', '0000000000504', TRUE, FALSE),
 (14, 5, 1, '2017-06-15', 90.00, 'credit_card', '0000000000505', TRUE, FALSE);
-
-DROP PROCEDURE IF EXISTS GenerateTickets;
-DROP PROCEDURE IF EXISTS GenerateRatings;
