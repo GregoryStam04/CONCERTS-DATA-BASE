@@ -1,3 +1,5 @@
+SET profiling = 1;
+
 -- Query 4: Average ratings for a specific artist
 SELECT 
     a.artist_id,
@@ -27,3 +29,5 @@ WHERE
     a.artist_id = 4
 GROUP BY 
     a.artist_id, a.artist_name;
+
+SHOW PROFILES;
