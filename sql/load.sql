@@ -366,6 +366,21 @@ INSERT INTO Staff (first_name, last_name, birth_date, staff_type, role, experien
 ('Kevin', 'Phillips', '1981-11-08', 'security', 'Security Analyst', 'expert'),
 ('Rachel', 'Evans', '1994-04-29', 'security', 'Security Assistant', 'trainee'),
 ('Brian', 'Turner', '1983-09-06', 'security', 'Access Control', 'experienced'),
+('Marcus', 'Reynolds', '1990-06-15', 'security', 'Security Officer', 'intermediate'),
+('Vanessa', 'Hughes', '1988-09-22', 'security', 'Security Coordinator', 'experienced'),
+('Terrence', 'Watson', '1991-03-11', 'security', 'Security Personnel', 'beginner'),
+('Natalie', 'Brooks', '1987-12-05', 'security', 'Crowd Control', 'experienced'),
+('Derek', 'Morgan', '1989-07-18', 'security', 'Security Guard', 'intermediate'),
+('Olivia', 'Bennett', '1993-02-09', 'security', 'Entrance Security', 'beginner'),
+('Gabriel', 'Kim', '1985-11-27', 'security', 'Security Supervisor', 'expert'),
+('Sophie', 'Patel', '1992-08-14', 'security', 'Emergency Response', 'intermediate'),
+('Julian', 'Rodriguez', '1986-04-22', 'security', 'Perimeter Security', 'experienced'),
+('Hannah', 'Thompson', '1994-01-08', 'security', 'Security Assistant', 'trainee'),
+('Kyle', 'Richardson', '1987-10-19', 'security', 'Asset Protection', 'intermediate'),
+('Zoe', 'Anderson', '1990-05-30', 'security', 'Security Officer', 'experienced'),
+('Calvin', 'Mitchell', '1992-11-16', 'security', 'Security Patrol', 'beginner'),
+('Eva', 'Collins', '1988-07-25', 'security', 'Security Analyst', 'experienced'),
+('Nolan', 'Garcia', '1991-03-04', 'security', 'Backstage Security', 'intermediate'),
 
 -- Support staff
 ('Jennifer', 'Cooper', '1989-05-12', 'support', 'Guest Relations Manager', 'experienced'),
@@ -382,7 +397,22 @@ INSERT INTO Staff (first_name, last_name, birth_date, staff_type, role, experien
 ('Tyler', 'Henderson', '1995-01-08', 'support', 'Information Guide', 'trainee'),
 ('Amy', 'Coleman', '1986-08-15', 'support', 'VIP Host', 'experienced'),
 ('Eric', 'Jenkins', '1990-05-23', 'support', 'Ticketing Manager', 'intermediate'),
-('Rebecca', 'Perry', '1988-11-30', 'support', 'Customer Service', 'experienced');
+('Rebecca', 'Perry', '1988-11-30', 'support', 'Customer Service', 'experienced'),
+('Ava', 'Michaels', '1994-09-17', 'support', 'Guest Relations', 'intermediate'),
+('Lucas', 'Stewart', '1989-04-28', 'support', 'Information Assistant', 'beginner'),
+('Mia', 'Patterson', '1992-11-06', 'support', 'Hospitality Staff', 'intermediate'),
+('Ethan', 'Cooper', '1987-06-15', 'support', 'Customer Service', 'experienced'),
+('Isabella', 'Foster', '1995-01-22', 'support', 'Transportation Aide', 'trainee'),
+('Benjamin', 'Wright', '1990-08-11', 'support', 'Merchandise Assistant', 'beginner'),
+('Charlotte', 'Hayes', '1988-03-19', 'support', 'Food Service', 'intermediate'),
+('Mason', 'Gibson', '1993-05-07', 'support', 'Accessibility Support', 'experienced'),
+('Harper', 'Dixon', '1991-12-14', 'support', 'Lost and Found', 'beginner'),
+('Jack', 'Wagner', '1986-09-25', 'support', 'Information Guide', 'intermediate'),
+('Lily', 'Warren', '1994-02-03', 'support', 'First Aid Assistant', 'experienced'),
+('Owen', 'Boyd', '1989-10-31', 'support', 'VIP Host', 'intermediate'),
+('Chloe', 'Fuller', '1992-07-29', 'support', 'Volunteer Coordinator', 'beginner'),
+('Samuel', 'Mills', '1987-04-18', 'support', 'Artist Liaison', 'experienced'),
+('Grace', 'Webb', '1990-11-09', 'support', 'Ticketing Assistant', 'intermediate');
 
 -- Insert Events
 INSERT INTO Event (event_name, event_date, stage_id, start_time, end_time, description) VALUES
