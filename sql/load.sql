@@ -493,7 +493,7 @@ INSERT INTO Performance (event_id, performance_type, start_time, end_time, artis
 (1, 'headline', '22:15:00', '23:00:00', NULL, 1), -- Cosmic Rays
 
 -- Electronic Friday (Event 2, Festival 1)
-(2, 'warm up', '19:30:00', '20:30:00', 3, NULL), -- Michael Johnson
+(2, 'warm up', '19:30:00', '20:30:00', 1, NULL), -- John Smith as warm up
 (2, 'regular', '20:45:00', '21:45:00', NULL, 3), -- Neon Dreams
 (2, 'headline', '22:00:00', '23:30:00', 6, NULL), -- Lisa Chen
 (2, 'special guest', '23:45:00', '01:30:00', NULL, 6), -- Crystal Skies
@@ -505,7 +505,7 @@ INSERT INTO Performance (event_id, performance_type, start_time, end_time, artis
 (3, 'special guest', '18:45:00', '19:45:00', 12, NULL), -- Sophia Lee
 
 -- Closing Party (Event 4, Festival 1)
-(4, 'warm up', '16:30:00', '17:30:00', NULL, 4), -- Electric Echo
+(4, 'warm up', '16:30:00', '17:30:00', 1, NULL), -- Electric Echo
 (4, 'regular', '17:45:00', '18:45:00', 8, NULL), -- Anna Martinez
 (4, 'special guest', '19:00:00', '20:30:00', NULL, 5), -- Velvet Thunder
 (4, 'headline', '20:45:00', '22:45:00', 4, NULL), -- Sarah Wilson
@@ -517,19 +517,19 @@ INSERT INTO Performance (event_id, performance_type, start_time, end_time, artis
 (5, 'headline', '21:15:00', '22:45:00', 9, NULL), -- Robert Kim
 
 -- Jazz Night (Event 6, Festival 2)
-(6, 'warm up', '18:30:00', '19:30:00', 19, NULL), -- Marcos Rodriguez
+(6, 'warm up', '18:30:00', '19:30:00', NULL, 15), -- Jungle Fever
 (6, 'regular', '19:45:00', '20:45:00', NULL, 11), -- Northern Lights
 (6, 'headline', '21:00:00', '22:30:00', 4, NULL), -- Sarah Wilson
 (6, 'special guest', '22:45:00', '23:45:00', 20, NULL), -- Grace Kim
 
 -- Hip Hop Showcase (Event 7, Festival 2)
-(7, 'warm up', '20:30:00', '21:30:00', 5, NULL), -- David Brown
+(7, 'warm up', '20:30:00', '21:30:00', NULL, 15), -- Jungle Fever
 (7, 'regular', '21:45:00', '22:45:00', NULL, 7), -- Urban Pulse
 (7, 'special guest', '23:00:00', '00:00:00', 21, NULL), -- Victor Nguyen
 (7, 'headline', '00:15:00', '01:45:00', NULL, 12), -- Desert Storm
 
 -- Alternative Day (Event 8, Festival 2)
-(8, 'warm up', '15:30:00', '16:30:00', NULL, 13), -- Ocean Wave
+(8, 'warm up', '15:30:00', '16:30:00', NULL, 15), -- Jungle Fever
 (8, 'regular', '16:45:00', '17:45:00', 11, NULL), -- Thomas Wright
 (8, 'special guest', '18:00:00', '19:00:00', NULL, 14), -- Mountain Echo
 (8, 'headline', '19:15:00', '21:15:00', 12, NULL), -- Sophia Lee
@@ -609,7 +609,7 @@ INSERT INTO Performance (event_id, performance_type, start_time, end_time, artis
 -- Classical Revival (Event 21, Festival 5)
 (21, 'warm up', '18:30:00', '19:30:00', 7, NULL), -- James Taylor
 (21, 'headline', '19:45:00', '21:45:00', NULL, 4), -- Electric Echo
-(21, 'special guest', '22:00:00', '22:00:00', 35, NULL), -- Andrew Phillips
+(21, 'special guest', '22:00:00', '22:00:00', 1, NULL), -- John Smith
 
 -- European Beats (Event 22, Festival 5)
 (22, 'warm up', '17:30:00', '18:30:00', NULL, 5), -- Velvet Thunder
