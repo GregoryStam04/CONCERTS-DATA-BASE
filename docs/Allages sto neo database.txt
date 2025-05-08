@@ -3,7 +3,7 @@ Allages sto neo database:
 
 bazw foreign keys gia ola ta entities se image_id me url kai description
 
-5/1/25: 
+1/5/25: 
 greg: evala duo festival sto mellon
     provlima --> den exw dedomena gia query 3 -- kaneis den kanei warm up duo fores DONE
 
@@ -12,3 +12,24 @@ george: q11: χρειάζεται προσθήκη performances για κάπο�
 
 5/5/25 : 
 er-relational
+
+7/5/25:
+    complex attributes
+    relationship sets
+    weak or not?
+
+8/5/25:
+    domi report: 
+        a. sxediasmos kai ulopoihsh bashs dedomenwn
+            1. ER diagram greg
+            2. ylopoihsh bashs
+                a Relational schema 
+                b. anaptuksh bashs- ddl:
+                    2.1. Tables - typoi, foreign keys, primary keys, cascade , auto increment, 
+                    2.2. Constraints
+                    2.3. Indexes
+                    2.4. Triggers
+                    2.5. Procedures
+            3. Dummy data dml script
+        b. Sxediasmos kai ylopoihsh erwthmatwn
+            Qin Qout 1, 2, 3, 4 ,6  a..... screenshots me kwdika mono gia 4, 6
