@@ -25,11 +25,11 @@ er-relational
             2. ylopoihsh bashs
                 a Relational schema 
                 b. anaptuksh bashs- ddl:
-                    2.1. Tables - typoi, foreign keys, primary keys, cascade , auto increment, 
-                    2.2. Constraints
-                    2.3. Indexes
-                    2.4. Triggers
-                    2.5. Procedures
-            3. Dummy data dml script
-        b. Sxediasmos kai ylopoihsh erwthmatwn
+                    2.1. Tables - typoi, foreign keys, primary keys, cascade , auto increment, # fragkos
+                    2.2. Constraints  george
+                    2.3. Indexes george
+                    2.4. Triggers george
+            3.1 Dummy data dml script greg 
+            3.2. Procedures - sto load  
+        b. Sxediasmos kai ylopoihsh erwthmatwn o kathenas ta dika toy
             Qin Qout 1, 2, 3, 4 ,6  a..... screenshots me kwdika mono gia 4, 6
