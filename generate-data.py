@@ -5,7 +5,7 @@ import string
 
 # Database connection
 db_config = {
-    'host': 'localhost',
+    'host': 'localhost3306',
     'user': 'root',
     'password': '',  # Change this to your MySQL password
     'database': 'pulse_university'

@@ -33,3 +33,6 @@ er-relational
             3.2. Procedures - sto load  
         b. Sxediasmos kai ylopoihsh erwthmatwn o kathenas ta dika toy
             Qin Qout 1, 2, 3, 4 ,6  a..... screenshots me kwdika mono gia 4, 6
+
+er σειρά επεξήγησης: Location , festival, stage, event, staff, performance, artist, band , artistband, bandgenre artistgenre, genre,
+                    , ticket, rating , visitor, resalesellerqueue, ticketcategory, resalebuyerqueue
