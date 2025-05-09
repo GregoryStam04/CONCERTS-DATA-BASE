@@ -36,8 +36,8 @@ CREATE TABLE Festival (
     location_id INT NOT NULL,
     image_id INT NULL,
     description TEXT,
-    FOREIGN KEY (image_id) REFERENCES EntityImage(image_id),
-    FOREIGN KEY (location_id) REFERENCES Location(location_id),
+    FOREIGN KEY (image_id) REFERENCES EntityImage(image_id) ON DELETE SET NULL ON UPDATE CASCADE,
+    FOREIGN KEY (location_id) REFERENCES Location(location_id) ON DELETE CASCADE ON UPDATE CASCADE,
     CHECK (end_date >= start_date)
 );
 
@@ -50,8 +50,8 @@ CREATE TABLE Stage (
     technical_equipment TEXT,
     festival_id INT NOT NULL,
     image_id INT NULL,
-    FOREIGN KEY (image_id) REFERENCES EntityImage(image_id),
-    FOREIGN KEY (festival_id) REFERENCES Festival(festival_id),
+    FOREIGN KEY (image_id) REFERENCES EntityImage(image_id) ON DELETE SET NULL ON UPDATE CASCADE,
+    FOREIGN KEY (festival_id) REFERENCES Festival(festival_id) ON DELETE CASCADE ON UPDATE CASCADE,
     CHECK (max_capacity > 0)
 );
 
@@ -64,7 +64,7 @@ CREATE TABLE Event (
     start_time TIME NOT NULL,
     end_time TIME NOT NULL,
     description TEXT,
-    FOREIGN KEY (stage_id) REFERENCES Stage(stage_id),
+    FOREIGN KEY (stage_id) REFERENCES Stage(stage_id) ON DELETE CASCADE ON UPDATE CASCADE,
     UNIQUE (stage_id, event_date, start_time, end_time)
 );
 
@@ -73,7 +73,7 @@ CREATE TABLE Genre (
     genre_id INT AUTO_INCREMENT PRIMARY KEY,
     genre_name VARCHAR(100) NOT NULL,
     parent_genre_id INT NULL,
-    FOREIGN KEY (parent_genre_id) REFERENCES Genre(genre_id),
+    FOREIGN KEY (parent_genre_id) REFERENCES Genre(genre_id) ON DELETE SET NULL ON UPDATE CASCADE,
     UNIQUE (genre_name)
 );
 
@@ -86,7 +86,7 @@ CREATE TABLE Artist (
     website VARCHAR(255) NULL,
     instagram VARCHAR(255) NULL,
     image_id INT NULL,
-    FOREIGN KEY (image_id) REFERENCES EntityImage(image_id),
+    FOREIGN KEY (image_id) REFERENCES EntityImage(image_id) ON DELETE SET NULL ON UPDATE CASCADE,
     UNIQUE (artist_name, birth_date)
 );
 
@@ -98,7 +98,7 @@ CREATE TABLE Band (
     website VARCHAR(255) NULL,
     instagram VARCHAR(255) NULL,
     image_id INT NULL,
-    FOREIGN KEY (image_id) REFERENCES EntityImage(image_id),
+    FOREIGN KEY (image_id) REFERENCES EntityImage(image_id) ON DELETE SET NULL ON UPDATE CASCADE,
     UNIQUE (band_name)
 );
 
@@ -108,8 +108,8 @@ CREATE TABLE ArtistBand (
     band_id INT NOT NULL,
     join_date DATE NOT NULL,
     PRIMARY KEY (artist_id, band_id),
-    FOREIGN KEY (artist_id) REFERENCES Artist(artist_id),
-    FOREIGN KEY (band_id) REFERENCES Band(band_id)
+    FOREIGN KEY (artist_id) REFERENCES Artist(artist_id) ON DELETE CASCADE ON UPDATE CASCADE,
+    FOREIGN KEY (band_id) REFERENCES Band(band_id) ON DELETE CASCADE ON UPDATE CASCADE
 );
 
 -- Artist-Genre relationship (Many-to-Many)
@@ -117,8 +117,8 @@ CREATE TABLE ArtistGenre (
     artist_id INT NOT NULL,
     genre_id INT NOT NULL,
     PRIMARY KEY (artist_id, genre_id),
-    FOREIGN KEY (artist_id) REFERENCES Artist(artist_id),
-    FOREIGN KEY (genre_id) REFERENCES Genre(genre_id)
+     FOREIGN KEY (artist_id) REFERENCES Artist(artist_id) ON DELETE CASCADE ON UPDATE CASCADE,
+    FOREIGN KEY (genre_id) REFERENCES Genre(genre_id) ON DELETE CASCADE ON UPDATE CASCADE
 );
 
 -- Band-Genre relationship (Many-to-Many)
@@ -126,8 +126,8 @@ CREATE TABLE BandGenre (
     band_id INT NOT NULL,
     genre_id INT NOT NULL,
     PRIMARY KEY (band_id, genre_id),
-    FOREIGN KEY (band_id) REFERENCES Band(band_id),
-    FOREIGN KEY (genre_id) REFERENCES Genre(genre_id)
+    FOREIGN KEY (band_id) REFERENCES Band(band_id) ON DELETE CASCADE ON UPDATE CASCADE,
+    FOREIGN KEY (genre_id) REFERENCES Genre(genre_id) ON DELETE CASCADE ON UPDATE CASCADE
 );
 
 -- Performance table
@@ -140,10 +140,10 @@ CREATE TABLE Performance (
     artist_id INT NULL,
     band_id INT NULL,
     image_id INT NULL,
-    FOREIGN KEY (event_id) REFERENCES Event(event_id),
-    FOREIGN KEY (artist_id) REFERENCES Artist(artist_id),
-    FOREIGN KEY (band_id) REFERENCES Band(band_id),
-    FOREIGN KEY (image_id) REFERENCES EntityImage(image_id),
+    FOREIGN KEY (event_id) REFERENCES Event(event_id) ON DELETE CASCADE ON UPDATE CASCADE,
+    FOREIGN KEY (artist_id) REFERENCES Artist(artist_id) ON DELETE SET NULL ON UPDATE CASCADE,
+    FOREIGN KEY (band_id) REFERENCES Band(band_id) ON DELETE SET NULL ON UPDATE CASCADE,
+    FOREIGN KEY (image_id) REFERENCES EntityImage(image_id) ON DELETE SET NULL ON UPDATE CASCADE,
     CHECK ((artist_id IS NULL AND band_id IS NOT NULL) OR (artist_id IS NOT NULL AND band_id IS NULL)),
     CHECK (TIMEDIFF(end_time, start_time) <= '03:00:00')
 );
@@ -158,7 +158,7 @@ CREATE TABLE Staff (
     role VARCHAR(100) NOT NULL,
     experience_level VARCHAR(100) NOT NULL,
     image_id INT NULL,
-    FOREIGN KEY (image_id) REFERENCES EntityImage(image_id)
+    FOREIGN KEY (image_id) REFERENCES EntityImage(image_id) ON DELETE SET NULL ON UPDATE CASCADE
 );
 
 -- Staff Assignment table
@@ -166,8 +166,8 @@ CREATE TABLE StaffAssignment (
     assignment_id INT AUTO_INCREMENT PRIMARY KEY,
     staff_id INT NOT NULL,
     event_id INT NOT NULL,
-    FOREIGN KEY (staff_id) REFERENCES Staff(staff_id),
-    FOREIGN KEY (event_id) REFERENCES Event(event_id),
+    FOREIGN KEY (staff_id) REFERENCES Staff(staff_id) ON DELETE CASCADE ON UPDATE CASCADE,
+    FOREIGN KEY (event_id) REFERENCES Event(event_id) ON DELETE CASCADE ON UPDATE CASCADE,
     UNIQUE (staff_id, event_id)
 );
 
@@ -201,9 +201,9 @@ CREATE TABLE Ticket (
     ean_code CHAR(13) NOT NULL,
     is_used BOOLEAN DEFAULT FALSE,
     is_for_resale BOOLEAN DEFAULT FALSE,
-    FOREIGN KEY (event_id) REFERENCES Event(event_id),
-    FOREIGN KEY (visitor_id) REFERENCES Visitor(visitor_id),
-    FOREIGN KEY (category_id) REFERENCES TicketCategory(category_id),
+    FOREIGN KEY (event_id) REFERENCES Event(event_id) ON DELETE CASCADE ON UPDATE CASCADE,
+    FOREIGN KEY (visitor_id) REFERENCES Visitor(visitor_id) ON DELETE CASCADE ON UPDATE CASCADE,
+    FOREIGN KEY (category_id) REFERENCES TicketCategory(category_id) ON DELETE CASCADE ON UPDATE CASCADE,
     UNIQUE (ean_code),
     CHECK (price > 0)
 );
@@ -216,9 +216,9 @@ CREATE TABLE ResaleBuyerQueue (
     category_id INT NOT NULL,
     request_date DATETIME NOT NULL,
     is_fulfilled BOOLEAN DEFAULT FALSE,
-    FOREIGN KEY (visitor_id) REFERENCES Visitor(visitor_id),
-    FOREIGN KEY (event_id) REFERENCES Event(event_id),
-    FOREIGN KEY (category_id) REFERENCES TicketCategory(category_id)
+    FOREIGN KEY (visitor_id) REFERENCES Visitor(visitor_id) ON DELETE CASCADE ON UPDATE CASCADE,
+FOREIGN KEY (event_id) REFERENCES Event(event_id) ON DELETE CASCADE ON UPDATE CASCADE,
+FOREIGN KEY (category_id) REFERENCES TicketCategory(category_id) ON DELETE CASCADE ON UPDATE CASCADE
 );
 
 -- Resale Queue (for sellers)
@@ -227,7 +227,7 @@ CREATE TABLE ResaleSellerQueue (
     ticket_id INT NOT NULL,
     request_date DATETIME NOT NULL,
     is_sold BOOLEAN DEFAULT FALSE,
-    FOREIGN KEY (ticket_id) REFERENCES Ticket(ticket_id),
+    FOREIGN KEY (ticket_id) REFERENCES Ticket(ticket_id) ON DELETE CASCADE ON UPDATE CASCADE,
     UNIQUE (ticket_id)
 );
 
@@ -241,8 +241,8 @@ CREATE TABLE Rating (
     stage_presence INT CHECK (stage_presence BETWEEN 1 AND 5),
     organization INT CHECK (organization BETWEEN 1 AND 5),
     overall_impression INT CHECK (overall_impression BETWEEN 1 AND 5),
-    FOREIGN KEY (ticket_id) REFERENCES Ticket(ticket_id),
-    FOREIGN KEY (performance_id) REFERENCES Performance(performance_id),
+    FOREIGN KEY (ticket_id) REFERENCES Ticket(ticket_id) ON DELETE CASCADE ON UPDATE CASCADE,
+    FOREIGN KEY (performance_id) REFERENCES Performance(performance_id) ON DELETE CASCADE ON UPDATE CASCADE,
     UNIQUE (ticket_id, performance_id)
 );
 
@@ -254,7 +254,7 @@ CREATE TABLE EventWarnings (
     created_at DATETIME NOT NULL,
     resolved BOOLEAN DEFAULT FALSE,
     resolved_at DATETIME,
-    FOREIGN KEY (event_id) REFERENCES Event(event_id)
+    FOREIGN KEY (event_id) REFERENCES Event(event_id) ON DELETE CASCADE ON UPDATE CASCADE
 );
 
 -- Create indexes for the most frequently used queries
