@@ -117,7 +117,7 @@ CREATE TABLE ArtistGenre (
     artist_id INT NOT NULL,
     genre_id INT NOT NULL,
     PRIMARY KEY (artist_id, genre_id),
-     FOREIGN KEY (artist_id) REFERENCES Artist(artist_id) ON DELETE CASCADE ON UPDATE CASCADE,
+    FOREIGN KEY (artist_id) REFERENCES Artist(artist_id) ON DELETE CASCADE ON UPDATE CASCADE,
     FOREIGN KEY (genre_id) REFERENCES Genre(genre_id) ON DELETE CASCADE ON UPDATE CASCADE
 );
 
@@ -217,8 +217,8 @@ CREATE TABLE ResaleBuyerQueue (
     request_date DATETIME NOT NULL,
     is_fulfilled BOOLEAN DEFAULT FALSE,
     FOREIGN KEY (visitor_id) REFERENCES Visitor(visitor_id) ON DELETE CASCADE ON UPDATE CASCADE,
-FOREIGN KEY (event_id) REFERENCES Event(event_id) ON DELETE CASCADE ON UPDATE CASCADE,
-FOREIGN KEY (category_id) REFERENCES TicketCategory(category_id) ON DELETE CASCADE ON UPDATE CASCADE
+    FOREIGN KEY (event_id) REFERENCES Event(event_id) ON DELETE CASCADE ON UPDATE CASCADE,
+    FOREIGN KEY (category_id) REFERENCES TicketCategory(category_id) ON DELETE CASCADE ON UPDATE CASCADE
 );
 
 -- Resale Queue (for sellers)
