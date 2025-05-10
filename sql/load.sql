@@ -967,7 +967,7 @@ SET s.max_capacity = FLOOR(subq.support_count / 0.02);
 DROP PROCEDURE IF EXISTS AssignStaffToEvents;
 
 -- Insert Tickets (at least 200 tickets)
--- First, let's create a procedure to generate the tickets with proper EAN codes
+-- First, create a procedure to generate the tickets with proper EAN codes
 DELIMITER //
 CREATE PROCEDURE GenerateTickets()
 BEGIN
