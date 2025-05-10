@@ -479,7 +479,7 @@ BEGIN
         AND YEAR(e.event_date) BETWEEN (festival_year - 3) AND (festival_year - 1);
     END IF;
     
-    IF consecutive_years >= 3 THEN
+    IF consecutive_years > 3 THEN
         SIGNAL SQLSTATE '45000' 
         SET MESSAGE_TEXT = 'Artist/Band cannot perform for more than 3 consecutive years';
     END IF;
