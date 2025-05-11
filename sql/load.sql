@@ -221,79 +221,79 @@ INSERT INTO ArtistBand (artist_id, band_id, join_date) VALUES
 
 -- Insert ArtistGenre (artist-genre relationships)
 INSERT INTO ArtistGenre (artist_id, genre_id) VALUES
-(1, 1), (1, 16), -- Rock, Hard Rock
-(2, 2), (2, 19), -- Pop, Electro Pop
-(3, 3), (3, 21), -- Electronic, Techno
-(4, 4), (4, 24), -- Jazz, Bebop
-(5, 5), (5, 26), -- Hip Hop, Trap
-(6, 6), (6, 27), -- Folk, Contemporary Folk
-(7, 7), (7, 28), -- Classical, Chamber Music
-(8, 8), (8, 29), -- R&B, Neo Soul
-(9, 9), (9, 30), -- Metal, Death Metal
-(10, 10), -- Country
-(11, 11), -- Indie
-(12, 12), -- Alternative
-(13, 13), -- Reggae
-(14, 14), -- Blues
-(15, 15), -- Punk
-(16, 1), (16, 17), -- Rock, Soft Rock
-(17, 2), (17, 20), -- Pop, Synth Pop
-(18, 3), (18, 22), -- Electronic, House
-(19, 4), (19, 25), -- Jazz, Smooth Jazz
-(20, 5), -- Hip Hop
-(21, 6), -- Folk
-(22, 7), -- Classical
-(23, 8), -- R&B
-(24, 9), -- Metal
-(25, 10), -- Country
-(26, 11), -- Indie
-(27, 12), -- Alternative
-(28, 13), -- Reggae
-(29, 14), -- Blues
-(30, 15), -- Punk
-(31, 1), (31, 18), -- Rock, Progressive Rock
-(32, 2), -- Pop
-(33, 3), (33, 23), -- Electronic, Trance
-(34, 4), -- Jazz
-(35, 5), -- Hip Hop
-(36, 6), -- Folk
-(37, 7), -- Classical
-(38, 8), -- R&B
-(39, 9), -- Metal
-(40, 10), -- Country
-(41, 11), -- Indie
-(42, 12), -- Alternative
-(43, 13), -- Reggae
-(44, 14), -- Blues
-(45, 15), -- Punk
-(46, 1), -- Rock
-(47, 2), -- Pop
-(48, 3), -- Electronic
-(49, 4), -- Jazz
-(50, 5); -- Hip Hop
+(1, 1), (1, 16), 
+(2, 2), (2, 19), 
+(3, 3), (3, 21), 
+(4, 4), (4, 24), 
+(5, 5), (5, 26), 
+(6, 6), (6, 27), 
+(7, 7), (7, 28), 
+(8, 8), (8, 29),
+(9, 9), (9, 30), 
+(10, 10),
+(11, 11), 
+(12, 12), 
+(13, 13), 
+(14, 14), 
+(15, 15), 
+(16, 1), (16, 17), 
+(17, 2), (17, 20), 
+(18, 3), (18, 22),
+(19, 4), (19, 25), 
+(20, 5), 
+(21, 6),
+(22, 7),
+(23, 8), 
+(24, 9), 
+(25, 10), 
+(26, 11), 
+(27, 12), 
+(28, 13), 
+(29, 14), 
+(30, 15), 
+(31, 1), (31, 18), 
+(32, 2), 
+(33, 3), (33, 23), 
+(34, 4), 
+(35, 5), 
+(36, 6),
+(37, 7), 
+(38, 8), 
+(39, 9), 
+(40, 10),
+(41, 11), 
+(42, 12), 
+(43, 13), 
+(44, 14), 
+(45, 15), 
+(46, 1),
+(47, 2),
+(48, 3), 
+(49, 4), 
+(50, 5); 
 
 -- Insert BandGenre (band-genre relationships)
 INSERT INTO BandGenre (band_id, genre_id) VALUES
-(1, 1), (1, 12), -- Rock, Alternative
-(2, 2), (2, 11), -- Pop, Indie
-(3, 3), (3, 21), -- Electronic, Techno
-(4, 4), (4, 25), -- Jazz, Smooth Jazz
-(5, 5), (5, 26), -- Hip Hop, Trap
-(6, 6), (6, 27), -- Folk, Contemporary Folk
-(7, 7), (7, 28), -- Classical, Chamber Music
-(8, 8), (8, 29), -- R&B, Neo Soul
-(9, 9), (9, 30), -- Metal, Death Metal
-(10, 10), -- Country
-(11, 11), -- Indie
-(12, 12), -- Alternative
-(13, 13), -- Reggae
-(14, 14), -- Blues
-(15, 15), -- Punk
-(16, 1), (16, 16), -- Rock, Hard Rock
-(17, 2), (17, 19), -- Pop, Electro Pop
-(18, 1), (18, 12), -- Rock, Alternative
-(19, 1), (19, 14), -- Rock, Blues
-(20, 1), (20, 12); -- Rock, Alternative
+(1, 1), (1, 12), 
+(2, 2), (2, 11), 
+(3, 3), (3, 21), 
+(4, 4), (4, 25), 
+(5, 5), (5, 26), 
+(6, 6), (6, 27), 
+(7, 7), (7, 28),
+(8, 8), (8, 29), 
+(9, 9), (9, 30), 
+(10, 10),
+(11, 11),
+(12, 12), 
+(13, 13),
+(14, 14),
+(15, 15), 
+(16, 1), (16, 16),
+(17, 2), (17, 19), 
+(18, 1), (18, 12), 
+(19, 1), (19, 14),
+(20, 1), (20, 12);
 
 -- Insert Stages (venues)
 INSERT INTO Stage (stage_name, description, max_capacity, technical_equipment, festival_id) VALUES
@@ -318,10 +318,7 @@ INSERT INTO Stage (stage_name, description, max_capacity, technical_equipment, f
 ('Central Park Stage', 'New Yorks iconic location', 400, 'Urban backdrop , city skyline views', 9),
 ('Brooklyn Arena', 'Industrial-styled venue', 1500, 'Warehouse aesthetics, graffiti art', 9),
 ('Victoria Harbor', 'Hong Kong waterfront', 280, 'Light show capabilities, harbor views', 10),
-('Kowloon Stage', 'Cultural fusion venue', 600, 'East meets West design, traditional elements', 10);
-
--- Insert additional stages to reach 30 total
-INSERT INTO Stage (stage_name, description, max_capacity, technical_equipment, festival_id) VALUES
+('Kowloon Stage', 'Cultural fusion venue', 600, 'East meets West design, traditional elements', 10),
 ('Alternative Grounds', 'Venue for alternative and indie bands', 700, 'Vintage amps, indie aesthetic', 1),
 ('Electronic Wonderland', 'Immersive experience for electronic music', 200, '3D mapping, interactive elements', 3),
 ('Classical Pavilion', 'Venue designed for orchestral performances', 400, 'Perfect acoustics, orchestra pit', 5),
@@ -487,284 +484,284 @@ INSERT INTO Event (event_name, event_date, stage_id, start_time, end_time, descr
 -- We need to create at least 100 performances across various events
 INSERT INTO Performance (event_id, performance_type, start_time, end_time, artist_id, band_id) VALUES
 -- Opening Night (Event 1, Festival 1)
-(1, 'warm up', '18:30:00', '19:30:00', 1, NULL), -- John Smith as warm up
-(1, 'regular', '19:45:00', '20:45:00', NULL, 2), -- Midnight Owls
-(1, 'special guest', '21:00:00', '22:00:00', 5, NULL), -- David Brown
-(1, 'headline', '22:15:00', '23:00:00', NULL, 1), -- Cosmic Rays
+(1, 'warm up', '18:30:00', '19:30:00', 1, NULL), 
+(1, 'regular', '19:45:00', '20:45:00', NULL, 2), 
+(1, 'special guest', '21:00:00', '22:00:00', 5, NULL), 
+(1, 'headline', '22:15:00', '23:00:00', NULL, 1), 
 
 -- Electronic Friday (Event 2, Festival 1)
-(2, 'warm up', '19:30:00', '20:30:00', 1, NULL), -- John Smith as warm up
-(2, 'regular', '20:45:00', '21:45:00', NULL, 3), -- Neon Dreams
-(2, 'headline', '22:00:00', '23:30:00', 6, NULL), -- Lisa Chen
-(2, 'special guest', '23:45:00', '01:30:00', NULL, 6), -- Crystal Skies
+(2, 'warm up', '19:30:00', '20:30:00', 1, NULL), 
+(2, 'regular', '20:45:00', '21:45:00', NULL, 3), 
+(2, 'headline', '22:00:00', '23:30:00', 6, NULL),
+(2, 'special guest', '23:45:00', '01:30:00', NULL, 6),
 
 -- Acoustic Saturday (Event 3, Festival 1)
-(3, 'warm up', '14:30:00', '15:30:00', 10, NULL), -- Patricia Lopez
-(3, 'regular', '15:45:00', '16:45:00', 7, NULL), -- James Taylor
-(3, 'headline', '17:00:00', '18:30:00', NULL, 8), -- Silver Lining
-(3, 'special guest', '18:45:00', '19:45:00', 12, NULL), -- Sophia Lee
+(3, 'warm up', '14:30:00', '15:30:00', 10, NULL), 
+(3, 'regular', '15:45:00', '16:45:00', 7, NULL), 
+(3, 'headline', '17:00:00', '18:30:00', NULL, 8),
+(3, 'special guest', '18:45:00', '19:45:00', 12, NULL),
 
 -- Closing Party (Event 4, Festival 1)
-(4, 'warm up', '16:30:00', '17:30:00', 1, NULL), -- Electric Echo
-(4, 'regular', '17:45:00', '18:45:00', 8, NULL), -- Anna Martinez
-(4, 'special guest', '19:00:00', '20:30:00', NULL, 5), -- Velvet Thunder
-(4, 'headline', '20:45:00', '22:45:00', 4, NULL), -- Sarah Wilson
+(4, 'warm up', '16:30:00', '17:30:00', 1, NULL), 
+(4, 'regular', '17:45:00', '18:45:00', 8, NULL), 
+(4, 'special guest', '19:00:00', '20:30:00', NULL, 5), 
+(4, 'headline', '20:45:00', '22:45:00', 4, NULL), 
 
 -- Rock Opening (Event 5, Festival 2)
-(5, 'warm up', '17:30:00', '18:30:00', NULL, 9), -- Rhythm Junction
-(5, 'regular', '18:45:00', '19:45:00', 15, NULL), -- Daniel Garcia
-(5, 'special guest', '20:00:00', '21:00:00', NULL, 10), -- Quantum Beat
-(5, 'headline', '21:15:00', '22:45:00', 9, NULL), -- Robert Kim
+(5, 'warm up', '17:30:00', '18:30:00', NULL, 9), 
+(5, 'regular', '18:45:00', '19:45:00', 15, NULL), 
+(5, 'special guest', '20:00:00', '21:00:00', NULL, 10), 
+(5, 'headline', '21:15:00', '22:45:00', 9, NULL), 
 
 -- Jazz Night (Event 6, Festival 2)
-(6, 'warm up', '18:30:00', '19:30:00', NULL, 15), -- Jungle Fever
-(6, 'regular', '19:45:00', '20:45:00', NULL, 11), -- Northern Lights
-(6, 'headline', '21:00:00', '22:30:00', 4, NULL), -- Sarah Wilson
-(6, 'special guest', '22:45:00', '23:45:00', 20, NULL), -- Grace Kim
+(6, 'warm up', '18:30:00', '19:30:00', NULL, 15), 
+(6, 'regular', '19:45:00', '20:45:00', NULL, 11), 
+(6, 'headline', '21:00:00', '22:30:00', 4, NULL), 
+(6, 'special guest', '22:45:00', '23:45:00', 20, NULL), 
 
 -- Hip Hop Showcase (Event 7, Festival 2)
-(7, 'warm up', '20:30:00', '21:30:00', NULL, 15), -- Jungle Fever
-(7, 'regular', '21:45:00', '22:45:00', NULL, 7), -- Urban Pulse
-(7, 'special guest', '23:00:00', '00:00:00', 21, NULL), -- Victor Nguyen
-(7, 'headline', '00:15:00', '01:45:00', NULL, 12), -- Desert Storm
+(7, 'warm up', '20:30:00', '21:30:00', NULL, 15), 
+(7, 'regular', '21:45:00', '22:45:00', NULL, 7), 
+(7, 'special guest', '23:00:00', '00:00:00', 21, NULL), 
+(7, 'headline', '00:15:00', '01:45:00', NULL, 12), 
 
 -- Alternative Day (Event 8, Festival 2)
-(8, 'warm up', '15:30:00', '16:30:00', NULL, 15), -- Jungle Fever
-(8, 'regular', '16:45:00', '17:45:00', 11, NULL), -- Thomas Wright
-(8, 'special guest', '18:00:00', '19:00:00', NULL, 14), -- Mountain Echo
-(8, 'headline', '19:15:00', '21:15:00', 12, NULL), -- Sophia Lee
+(8, 'warm up', '15:30:00', '16:30:00', NULL, 15), 
+(8, 'regular', '16:45:00', '17:45:00', 11, NULL), 
+(8, 'special guest', '18:00:00', '19:00:00', NULL, 14), 
+(8, 'headline', '19:15:00', '21:15:00', 12, NULL), 
 
 -- Grand Finale (Event 9, Festival 2)
-(9, 'warm up', '16:30:00', '17:30:00', NULL, 15), -- Jungle Fever
-(9, 'regular', '17:45:00', '18:45:00', 2, NULL), -- Emily Davis
-(9, 'special guest', '19:00:00', '20:30:00', NULL, 1), -- Cosmic Rays
-(9, 'headline', '20:45:00', '22:45:00', 1, NULL), -- John Smith
+(9, 'warm up', '16:30:00', '17:30:00', NULL, 15), 
+(9, 'regular', '17:45:00', '18:45:00', 2, NULL), 
+(9, 'special guest', '19:00:00', '20:30:00', NULL, 1), 
+(9, 'headline', '20:45:00', '22:45:00', 1, NULL),
 
 -- Tokyo Lights (Event 10, Festival 3)
-(10, 'warm up', '19:30:00', '20:30:00', 13, NULL), -- Kevin Wang
-(10, 'regular', '20:45:00', '21:45:00', NULL, 16), -- Metro Pulse
-(10, 'special guest', '22:00:00', '23:00:00', 14, NULL), -- Alexandra Adams
+(10, 'warm up', '19:30:00', '20:30:00', 13, NULL),
+(10, 'regular', '20:45:00', '21:45:00', NULL, 16), 
+(10, 'special guest', '22:00:00', '23:00:00', 14, NULL), 
 
 -- J-Pop Explosion (Event 11, Festival 3)
-(11, 'warm up', '18:30:00', '19:30:00', NULL, 17), -- Sunset Boulevard
-(11, 'headline', '19:45:00', '21:15:00', 16, NULL), -- Olivia Nelson
-(11, 'special guest', '21:30:00', '22:30:00', 22, NULL), -- Natalie Patel
+(11, 'warm up', '18:30:00', '19:30:00', NULL, 17),
+(11, 'headline', '19:45:00', '21:15:00', 16, NULL),
+(11, 'special guest', '21:30:00', '22:30:00', 22, NULL), 
 
 -- Global Beats (Event 12, Festival 3)
-(12, 'warm up', '17:30:00', '18:30:00', NULL, 3), -- Neon Dreams
-(12, 'regular', '18:45:00', '19:45:00', 17, NULL), -- Nicholas Carter
-(12, 'special guest', '20:00:00', '21:00:00', NULL, 4), -- Electric Echo
-(12, 'headline', '21:15:00', '22:00:00', 18, NULL), -- Emma White
+(12, 'warm up', '17:30:00', '18:30:00', NULL, 3),
+(12, 'regular', '18:45:00', '19:45:00', 17, NULL),
+(12, 'special guest', '20:00:00', '21:00:00', NULL, 4), 
+(12, 'headline', '21:15:00', '22:00:00', 18, NULL), 
 
 -- Electronic Dreams (Event 13, Festival 3)
-(13, 'warm up', '20:30:00', '21:30:00', 3, NULL), -- Michael Johnson
-(13, 'regular', '21:45:00', '22:45:00', NULL, 6), -- Crystal Skies
-(13, 'headline', '23:00:00', '00:30:00', 6, NULL), -- Lisa Chen
-(13, 'special guest', '00:45:00', '01:45:00', NULL, 3), -- Neon Dreams
+(13, 'warm up', '20:30:00', '21:30:00', 3, NULL), 
+(13, 'regular', '21:45:00', '22:45:00', NULL, 6), 
+(13, 'headline', '23:00:00', '00:30:00', 6, NULL), 
+(13, 'special guest', '00:45:00', '01:45:00', NULL, 3),
 
 -- Sayonara Party (Event 14, Festival 3)
-(14, 'warm up', '18:30:00', '19:30:00', NULL, 9), -- Rhythm Junction
-(14, 'regular', '19:45:00', '20:45:00', 23, NULL), -- Brandon Wilson
-(14, 'special guest', '21:00:00', '22:00:00', NULL, 11), -- Northern Lights
-(14, 'headline', '22:15:00', '23:45:00', 24, NULL), -- Michelle Park
+(14, 'warm up', '18:30:00', '19:30:00', NULL, 9), 
+(14, 'regular', '19:45:00', '20:45:00', 23, NULL), 
+(14, 'special guest', '21:00:00', '22:00:00', NULL, 11), 
+(14, 'headline', '22:15:00', '23:45:00', 24, NULL), 
 
 -- Sydney Calling (Event 15, Festival 4)
-(15, 'warm up', '18:30:00', '19:30:00', 25, NULL), -- Timothy Scott
-(15, 'regular', '19:45:00', '20:45:00', NULL, 12), -- Desert Storm
-(15, 'special guest', '21:00:00', '22:00:00', 26, NULL), -- Rebecca Allen
-(15, 'headline', '22:15:00', '23:00:00', NULL, 13), -- Ocean Wave
+(15, 'warm up', '18:30:00', '19:30:00', 25, NULL),
+(15, 'regular', '19:45:00', '20:45:00', NULL, 12),
+(15, 'special guest', '21:00:00', '22:00:00', 26, NULL),
+(15, 'headline', '22:15:00', '23:00:00', NULL, 13),
 
 -- Down Under Rock (Event 16, Festival 4)
-(16, 'warm up', '17:30:00', '18:30:00', NULL, 14), -- Mountain Echo
-(16, 'regular', '18:45:00', '19:45:00', 27, NULL), -- Jacob Moore
-(16, 'special guest', '20:00:00', '21:00:00', NULL, 15), -- Jungle Fever
-(16, 'headline', '21:15:00', '22:00:00', 28, NULL), -- Samantha Torres
+(16, 'warm up', '17:30:00', '18:30:00', NULL, 14),
+(16, 'regular', '18:45:00', '19:45:00', 27, NULL),
+(16, 'special guest', '20:00:00', '21:00:00', NULL, 15),
+(16, 'headline', '21:15:00', '22:00:00', 28, NULL), 
 
 -- Beach Party (Event 17, Festival 4)
-(17, 'warm up', '15:30:00', '16:30:00', 29, NULL), -- Ethan Lewis
-(17, 'regular', '16:45:00', '17:45:00', NULL, 16), -- Metro Pulse
-(17, 'special guest', '18:00:00', '19:30:00', 30, NULL), -- Isabella Clark
-(17, 'headline', '19:45:00', '21:45:00', NULL, 17), -- Sunset Boulevard
-(17, 'special guest', '22:00:00', '23:00:00', 1, NULL), -- John Smith
+(17, 'warm up', '15:30:00', '16:30:00', 29, NULL),
+(17, 'regular', '16:45:00', '17:45:00', NULL, 16),
+(17, 'special guest', '18:00:00', '19:30:00', 30, NULL), 
+(17, 'headline', '19:45:00', '21:45:00', NULL, 17), 
+(17, 'special guest', '22:00:00', '23:00:00', 1, NULL), 
 
 -- Indie Day (Event 18, Festival 4)
-(18, 'warm up', '14:30:00', '15:30:00', NULL, 18), -- Arctic Monkeys
-(18, 'regular', '15:45:00', '16:45:00', 2, NULL), -- Emily Davis
-(18, 'special guest', '17:00:00', '18:30:00', NULL, 19), -- The Black Keys
-(18, 'headline', '18:45:00', '20:45:00', 3, NULL), -- Michael Johnson
+(18, 'warm up', '14:30:00', '15:30:00', NULL, 18), 
+(18, 'regular', '15:45:00', '16:45:00', 2, NULL), 
+(18, 'special guest', '17:00:00', '18:30:00', NULL, 19), 
+(18, 'headline', '18:45:00', '20:45:00', 3, NULL), 
 
 -- Final Wave (Event 19, Festival 4)
-(19, 'warm up', '16:30:00', '17:30:00', 31, NULL), -- Christopher Reed
-(19, 'regular', '17:45:00', '18:45:00', NULL, 20), -- Imagine Dragons
-(19, 'special guest', '19:00:00', '20:30:00', 32, NULL), -- Ava Mitchell
-(19, 'headline', '20:45:00', '22:45:00', NULL, 1), -- Cosmic Rays
-(19, 'special guest', '23:00:00', '23:30:00', 4, NULL), -- Sarah Wilson
+(19, 'warm up', '16:30:00', '17:30:00', 31, NULL), 
+(19, 'regular', '17:45:00', '18:45:00', NULL, 20),
+(19, 'special guest', '19:00:00', '20:30:00', 32, NULL), 
+(19, 'headline', '20:45:00', '22:45:00', NULL, 1), 
+(19, 'special guest', '23:00:00', '23:30:00', 4, NULL), 
 
 -- Moscow Nights (Event 20, Festival 5)
-(20, 'warm up', '19:30:00', '20:30:00', NULL, 2), -- Midnight Owls
-(20, 'regular', '20:45:00', '21:45:00', 33, NULL), -- Jonathan Kelly
-(20, 'special guest', '22:00:00', '23:00:00', NULL, 3), -- Neon Dreams
-(20, 'headline', '23:15:00', '00:00:00', 34, NULL), -- Maria Gonzalez
+(20, 'warm up', '19:30:00', '20:30:00', NULL, 2), 
+(20, 'regular', '20:45:00', '21:45:00', 33, NULL), 
+(20, 'special guest', '22:00:00', '23:00:00', NULL, 3), 
+(20, 'headline', '23:15:00', '00:00:00', 34, NULL), 
 
 -- Classical Revival (Event 21, Festival 5)
-(21, 'warm up', '18:30:00', '19:30:00', 7, NULL), -- James Taylor
-(21, 'headline', '19:45:00', '21:45:00', NULL, 4), -- Electric Echo
-(21, 'special guest', '22:00:00', '22:00:00', 1, NULL), -- John Smith
+(21, 'warm up', '18:30:00', '19:30:00', 7, NULL), 
+(21, 'headline', '19:45:00', '21:45:00', NULL, 4), 
+(21, 'special guest', '22:00:00', '22:00:00', 1, NULL), 
 
 -- European Beats (Event 22, Festival 5)
-(22, 'warm up', '17:30:00', '18:30:00', NULL, 5), -- Velvet Thunder
-(22, 'regular', '18:45:00', '19:45:00', 36, NULL), -- Zoe Campbell
-(22, 'special guest', '20:00:00', '21:30:00', NULL, 6), -- Crystal Skies
-(22, 'headline', '21:45:00', '23:00:00', 8, NULL), -- Anna Martinez
+(22, 'warm up', '17:30:00', '18:30:00', NULL, 5), 
+(22, 'regular', '18:45:00', '19:45:00', 36, NULL), 
+(22, 'special guest', '20:00:00', '21:30:00', NULL, 6), 
+(22, 'headline', '21:45:00', '23:00:00', 8, NULL), 
 
 -- Festival Finale (Event 23, Festival 5)
-(23, 'warm up', '16:30:00', '17:30:00', 37, NULL), -- Benjamin Foster
-(23, 'regular', '17:45:00', '18:45:00', NULL, 7), -- Urban Pulse
-(23, 'special guest', '19:00:00', '20:00:00', 38, NULL), -- Chloe Murphy
-(23, 'headline', '20:15:00', '22:15:00', NULL, 8), -- Silver Lining
-(23, 'special guest', '22:30:00', '23:30:00', 9, NULL), -- Robert Kim
+(23, 'warm up', '16:30:00', '17:30:00', 37, NULL), 
+(23, 'regular', '17:45:00', '18:45:00', NULL, 7), 
+(23, 'special guest', '19:00:00', '20:00:00', 38, NULL), 
+(23, 'headline', '20:15:00', '22:15:00', NULL, 8), 
+(23, 'special guest', '22:30:00', '23:30:00', 9, NULL), 
 
 -- Rio Carnival (Event 24, Festival 6)
-(24, 'warm up', '18:30:00', '19:30:00', NULL, 9), -- Rhythm Junction
-(24, 'regular', '19:45:00', '20:45:00', 39, NULL), -- Gabriel Rivera
-(24, 'special guest', '21:00:00', '22:30:00', NULL, 10), -- Quantum Beat
-(24, 'headline', '22:45:00', '00:00:00', 40, NULL), -- Lily Cooper
+(24, 'warm up', '18:30:00', '19:30:00', NULL, 9),
+(24, 'regular', '19:45:00', '20:45:00', 39, NULL),
+(24, 'special guest', '21:00:00', '22:30:00', NULL, 10), 
+(24, 'headline', '22:45:00', '00:00:00', 40, NULL),
 
 -- Samba Night (Event 25, Festival 6)
-(25, 'warm up', '19:30:00', '20:30:00', 10, NULL), -- Patricia Lopez
-(25, 'regular', '20:45:00', '21:45:00', NULL, 11), -- Northern Lights
-(25, 'headline', '22:00:00', '23:30:00', 11, NULL), -- Thomas Wright
-(25, 'special guest', '23:45:00', '01:45:00', NULL, 12), -- Desert Storm
+(25, 'warm up', '19:30:00', '20:30:00', 10, NULL),
+(25, 'regular', '20:45:00', '21:45:00', NULL, 11),
+(25, 'headline', '22:00:00', '23:30:00', 11, NULL), 
+(25, 'special guest', '23:45:00', '01:45:00', NULL, 12), 
 
 -- Latin Fusion (Event 26, Festival 6)
-(26, 'warm up', '17:30:00', '18:30:00', 41, NULL), -- Mason Wood
-(26, 'regular', '18:45:00', '19:45:00', NULL, 13), -- Ocean Wave
-(26, 'special guest', '20:00:00', '21:00:00', 42, NULL), -- Aubrey Jenkins
-(26, 'headline', '21:15:00', '23:00:00', NULL, 14), -- Mountain Echo
+(26, 'warm up', '17:30:00', '18:30:00', 41, NULL), 
+(26, 'regular', '18:45:00', '19:45:00', NULL, 13),
+(26, 'special guest', '20:00:00', '21:00:00', 42, NULL), 
+(26, 'headline', '21:15:00', '23:00:00', NULL, 14), 
 
 -- Beach Closing (Event 27, Festival 6)
-(27, 'warm up', '16:30:00', '17:30:00', 43, NULL), -- Oscar Thompson
-(27, 'regular', '17:45:00', '18:45:00', NULL, 15), -- Jungle Fever
-(27, 'special guest', '19:00:00', '20:30:00', 44, NULL), -- Ruby Brooks
-(27, 'headline', '20:45:00', '22:45:00', NULL, 16), -- Metro Pulse
-(27, 'special guest', '23:00:00', '23:30:00', 12, NULL), -- Sophia Lee
+(27, 'warm up', '16:30:00', '17:30:00', 43, NULL), 
+(27, 'regular', '17:45:00', '18:45:00', NULL, 15), 
+(27, 'special guest', '19:00:00', '20:30:00', 44, NULL),
+(27, 'headline', '20:45:00', '22:45:00', NULL, 16), 
+(27, 'special guest', '23:00:00', '23:30:00', 12, NULL), 
 
 -- Montreal Welcome (Event 28, Festival 7)
-(28, 'warm up', '18:30:00', '19:30:00', NULL, 17), -- Sunset Boulevard
-(28, 'regular', '19:45:00', '20:45:00', 13, NULL), -- Kevin Wang
-(28, 'special guest', '21:00:00', '22:00:00', NULL, 18), -- Arctic Monkeys
-(28, 'headline', '22:15:00', '23:00:00', 14, NULL), -- Alexandra Adams
+(28, 'warm up', '18:30:00', '19:30:00', NULL, 17), 
+(28, 'regular', '19:45:00', '20:45:00', 13, NULL), 
+(28, 'special guest', '21:00:00', '22:00:00', NULL, 18), 
+(28, 'headline', '22:15:00', '23:00:00', 14, NULL), 
 
 -- Francophone Sounds (Event 29, Festival 7)
-(29, 'warm up', '19:30:00', '20:30:00', 45, NULL), -- Henry Dixon
-(29, 'regular', '20:45:00', '21:45:00', NULL, 19), -- The Black Keys
-(29, 'headline', '22:00:00', '23:30:00', 15, NULL), -- Daniel Garcia
-(29, 'special guest', '23:45:00', '00:00:00', NULL, 20), -- Imagine Dragons
+(29, 'warm up', '19:30:00', '20:30:00', 45, NULL), 
+(29, 'regular', '20:45:00', '21:45:00', NULL, 19), 
+(29, 'headline', '22:00:00', '23:30:00', 15, NULL), 
+(29, 'special guest', '23:45:00', '00:00:00', NULL, 20), 
 
 -- North American Showcase (Event 30, Festival 7)
-(30, 'warm up', '17:30:00', '18:30:00', 16, NULL), -- Olivia Nelson
-(30, 'regular', '18:45:00', '19:45:00', NULL, 1), -- Cosmic Rays
-(30, 'special guest', '20:00:00', '21:00:00', 17, NULL), -- Nicholas Carter
-(30, 'headline', '21:15:00', '23:00:00', NULL, 2), -- Midnight Owls
+(30, 'warm up', '17:30:00', '18:30:00', 16, NULL), 
+(30, 'regular', '18:45:00', '19:45:00', NULL, 1), 
+(30, 'special guest', '20:00:00', '21:00:00', 17, NULL), 
+(30, 'headline', '21:15:00', '23:00:00', NULL, 2), 
 
 -- Cultural Fusion (Event 31, Festival 7)
-(31, 'warm up', '15:30:00', '16:30:00', 46, NULL), -- Scarlett Coleman
-(31, 'regular', '16:45:00', '17:45:00', NULL, 3), -- Neon Dreams
-(31, 'special guest', '18:00:00', '19:00:00', 47, NULL), -- Leo Bennett
-(31, 'headline', '19:15:00', '21:15:00', NULL, 4), -- Electric Echo
+(31, 'warm up', '15:30:00', '16:30:00', 46, NULL), 
+(31, 'regular', '16:45:00', '17:45:00', NULL, 3), 
+(31, 'special guest', '18:00:00', '19:00:00', 47, NULL), 
+(31, 'headline', '19:15:00', '21:15:00', NULL, 4),
 
 -- Farewell Concert (Event 32, Festival 7)
-(32, 'warm up', '16:30:00', '17:30:00', 18, NULL), -- Emma White
-(32, 'regular', '17:45:00', '18:45:00', NULL, 5), -- Velvet Thunder
-(32, 'special guest', '19:00:00', '20:30:00', 19, NULL), -- Marcos Rodriguez
-(32, 'headline', '20:45:00', '22:45:00', NULL, 6), -- Crystal Skies
-(32, 'special guest', '23:00:00', '23:30:00', 20, NULL), -- Grace Kim
+(32, 'warm up', '16:30:00', '17:30:00', 18, NULL),
+(32, 'regular', '17:45:00', '18:45:00', NULL, 5), 
+(32, 'special guest', '19:00:00', '20:30:00', 19, NULL), 
+(32, 'headline', '20:45:00', '22:45:00', NULL, 6), 
+(32, 'special guest', '23:00:00', '23:30:00', 20, NULL), 
 
 -- Desert Welcome (Event 33, Festival 8)
-(33, 'warm up', '19:30:00', '20:30:00', NULL, 7), -- Urban Pulse
-(33, 'regular', '20:45:00', '21:45:00', 48, NULL), -- Luna Martinez
-(33, 'special guest', '22:00:00', '23:00:00', NULL, 8), -- Silver Lining
-(33, 'headline', '23:15:00', '00:00:00', 21, NULL), -- Victor Nguyen
+(33, 'warm up', '19:30:00', '20:30:00', NULL, 7),
+(33, 'regular', '20:45:00', '21:45:00', 48, NULL), 
+(33, 'special guest', '22:00:00', '23:00:00', NULL, 8), 
+(33, 'headline', '23:15:00', '00:00:00', 21, NULL),
 
 -- Arabian Nights (Event 34, Festival 8)
-(34, 'warm up', '20:30:00', '21:30:00', 49, NULL), -- Noah Parker
-(34, 'regular', '21:45:00', '22:45:00', NULL, 9), -- Rhythm Junction
-(34, 'headline', '23:00:00', '01:00:00', 22, NULL), -- Natalie Patel
+(34, 'warm up', '20:30:00', '21:30:00', 49, NULL), 
+(34, 'regular', '21:45:00', '22:45:00', NULL, 9), 
+(34, 'headline', '23:00:00', '01:00:00', 22, NULL), 
 
 -- Global Oasis (Event 35, Festival 8)
-(35, 'warm up', '18:30:00', '19:30:00', NULL, 10), -- Quantum Beat
-(35, 'regular', '19:45:00', '20:45:00', 50, NULL), -- Aurora James
-(35, 'special guest', '21:00:00', '22:00:00', NULL, 11), -- Northern Lights
-(35, 'headline', '22:15:00', '23:00:00', 23, NULL), -- Brandon Wilson
+(35, 'warm up', '18:30:00', '19:30:00', NULL, 10), 
+(35, 'regular', '19:45:00', '20:45:00', 50, NULL), 
+(35, 'special guest', '21:00:00', '22:00:00', NULL, 11), 
+(35, 'headline', '22:15:00', '23:00:00', 23, NULL),
 
 -- Electronic Sands (Event 36, Festival 8)
-(36, 'warm up', '21:30:00', '22:30:00', 3, NULL), -- Michael Johnson
-(36, 'regular', '22:45:00', '23:45:00', NULL, 12), -- Desert Storm
-(36, 'special guest', '00:00:00', '01:30:00', 6, NULL), -- Lisa Chen
-(36, 'headline', '01:45:00', '03:00:00', NULL, 3), -- Neon Dreams
+(36, 'warm up', '21:30:00', '22:30:00', 3, NULL), 
+(36, 'regular', '22:45:00', '23:45:00', NULL, 12), 
+(36, 'special guest', '00:00:00', '01:30:00', 6, NULL),
+(36, 'headline', '01:45:00', '03:00:00', NULL, 3), 
 
 -- Golden Finale (Event 37, Festival 8)
-(37, 'warm up', '18:30:00', '19:30:00', 24, NULL), -- Michelle Park
-(37, 'regular', '19:45:00', '20:45:00', NULL, 13), -- Ocean Wave
-(37, 'special guest', '21:00:00', '22:00:00', 25, NULL), -- Timothy Scott
-(37, 'headline', '22:15:00', '00:00:00', NULL, 14), -- Mountain Echo
+(37, 'warm up', '18:30:00', '19:30:00', 24, NULL), 
+(37, 'regular', '19:45:00', '20:45:00', NULL, 13),
+(37, 'special guest', '21:00:00', '22:00:00', 25, NULL), 
+(37, 'headline', '22:15:00', '00:00:00', NULL, 14), 
 
 -- New York Opening (Event 38, Festival 9 - Future)
-(38, 'warm up', '18:30:00', '19:30:00', NULL, 15), -- Jungle Fever
-(38, 'regular', '19:45:00', '20:45:00', 1, NULL), -- John Smith
-(38, 'special guest', '21:00:00', '22:00:00', NULL, 16), -- Metro Pulse
-(38, 'headline', '22:15:00', '23:00:00', 2, NULL), -- Emily Davis
+(38, 'warm up', '18:30:00', '19:30:00', NULL, 15), 
+(38, 'regular', '19:45:00', '20:45:00', 1, NULL),
+(38, 'special guest', '21:00:00', '22:00:00', NULL, 16), 
+(38, 'headline', '22:15:00', '23:00:00', 2, NULL),
 
 -- Brooklyn Beats (Event 39, Festival 9 - Future)
-(39, 'warm up', '19:30:00', '20:30:00', 5, NULL), -- David Brown
-(39, 'regular', '20:45:00', '21:45:00', NULL, 17), -- Sunset Boulevard
-(39, 'headline', '22:00:00', '23:30:00', 26, NULL), -- Rebecca Allen
-(39, 'special guest', '23:45:00', '01:00:00', NULL, 18), -- Arctic Monkeys
+(39, 'warm up', '19:30:00', '20:30:00', 5, NULL), 
+(39, 'regular', '20:45:00', '21:45:00', NULL, 17), 
+(39, 'headline', '22:00:00', '23:30:00', 26, NULL), 
+(39, 'special guest', '23:45:00', '01:00:00', NULL, 18), 
 
 -- Central Park Day (Event 40, Festival 9 - Future)
-(40, 'warm up', '14:30:00', '15:30:00', 27, NULL), -- Jacob Moore
-(40, 'regular', '15:45:00', '16:45:00', NULL, 19), -- The Black Keys
-(40, 'special guest', '17:00:00', '18:30:00', 4, NULL), -- Sarah Wilson
-(40, 'special guest', '18:45:00', '19:45:00', NULL, 20), -- Imagine Dragons
-(40, 'headline', '20:00:00', '22:00:00', 7, NULL), -- James Taylor
+(40, 'warm up', '14:30:00', '15:30:00', 27, NULL), 
+(40, 'regular', '15:45:00', '16:45:00', NULL, 19), 
+(40, 'special guest', '17:00:00', '18:30:00', 4, NULL), 
+(40, 'special guest', '18:45:00', '19:45:00', NULL, 20),
+(40, 'headline', '20:00:00', '22:00:00', 7, NULL),
 
 -- Urban Sounds (Event 41, Festival 9 - Future)
-(41, 'warm up', '16:30:00', '17:30:00', NULL, 1), -- Cosmic Rays
-(41, 'regular', '17:45:00', '18:45:00', 28, NULL), -- Samantha Torres
-(41, 'special guest', '19:00:00', '20:30:00', NULL, 2), -- Midnight Owls
-(41, 'headline', '20:45:00', '23:00:00', 8, NULL), -- Anna Martinez
+(41, 'warm up', '16:30:00', '17:30:00', NULL, 1), 
+(41, 'regular', '17:45:00', '18:45:00', 28, NULL), 
+(41, 'special guest', '19:00:00', '20:30:00', NULL, 2), 
+(41, 'headline', '20:45:00', '23:00:00', 8, NULL), 
 
 -- Anniversary Closing (Event 42, Festival 9 - Future)
-(42, 'warm up', '17:30:00', '18:30:00', 29, NULL), -- Ethan Lewis
-(42, 'regular', '18:45:00', '19:45:00', NULL, 3), -- Neon Dreams
-(42, 'special guest', '20:00:00', '21:30:00', 9, NULL), -- Robert Kim
-(42, 'headline', '21:45:00', '00:00:00', NULL, 4), -- Electric Echo
+(42, 'warm up', '17:30:00', '18:30:00', 29, NULL),
+(42, 'regular', '18:45:00', '19:45:00', NULL, 3), 
+(42, 'special guest', '20:00:00', '21:30:00', 9, NULL), 
+(42, 'headline', '21:45:00', '00:00:00', NULL, 4), 
 
 -- Future Festival Events (Festival 10)
-(43, 'warm up', '19:30:00', '20:30:00', NULL, 5), -- Velvet Thunder
-(43, 'regular', '20:45:00', '21:45:00', 10, NULL), -- Patricia Lopez
-(43, 'special guest', '22:00:00', '23:00:00', NULL, 6), -- Crystal Skies
-(43, 'headline', '23:15:00', '00:00:00', 11, NULL), -- Thomas Wright
+(43, 'warm up', '19:30:00', '20:30:00', NULL, 5),
+(43, 'regular', '20:45:00', '21:45:00', 10, NULL), 
+(43, 'special guest', '22:00:00', '23:00:00', NULL, 6), 
+(43, 'headline', '23:15:00', '00:00:00', 11, NULL), 
 
-(44, 'warm up', '18:30:00', '19:30:00', 12, NULL), -- Sophia Lee
-(44, 'regular', '19:45:00', '20:45:00', NULL, 7), -- Urban Pulse
-(44, 'headline', '21:00:00', '22:30:00', 13, NULL), -- Kevin Wang
-(44, 'special guest', '22:45:00', '23:00:00', NULL, 8), -- Silver Lining
+(44, 'warm up', '18:30:00', '19:30:00', 12, NULL), 
+(44, 'regular', '19:45:00', '20:45:00', NULL, 7), 
+(44, 'headline', '21:00:00', '22:30:00', 13, NULL), 
+(44, 'special guest', '22:45:00', '23:00:00', NULL, 8), 
 
-(45, 'warm up', '17:30:00', '18:30:00', NULL, 9), -- Rhythm Junction
-(45, 'regular', '18:45:00', '19:45:00', 14, NULL), -- Alexandra Adams
-(45, 'special guest', '20:00:00', '21:00:00', NULL, 10), -- Quantum Beat
-(45, 'headline', '21:15:00', '23:00:00', 15, NULL), -- Daniel Garcia
+(45, 'warm up', '17:30:00', '18:30:00', NULL, 9), 
+(45, 'regular', '18:45:00', '19:45:00', 14, NULL), 
+(45, 'special guest', '20:00:00', '21:00:00', NULL, 10),
+(45, 'headline', '21:15:00', '23:00:00', 15, NULL), 
 
-(46, 'warm up', '20:30:00', '21:30:00', 16, NULL), -- Olivia Nelson
-(46, 'regular', '21:45:00', '22:45:00', NULL, 11), -- Northern Lights
-(46, 'special guest', '23:00:00', '00:30:00', 17, NULL), -- Nicholas Carter
-(46, 'headline', '00:45:00', '02:00:00', NULL, 12), -- Desert Storm
+(46, 'warm up', '20:30:00', '21:30:00', 16, NULL),
+(46, 'regular', '21:45:00', '22:45:00', NULL, 11), 
+(46, 'special guest', '23:00:00', '00:30:00', 17, NULL), 
+(46, 'headline', '00:45:00', '02:00:00', NULL, 12),
 
-(47, 'warm up', '18:30:00', '19:30:00', NULL, 13), -- Ocean Wave
-(47, 'regular', '19:45:00', '20:45:00', 18, NULL), -- Emma White
-(47, 'special guest', '21:00:00', '22:00:00', NULL, 14), -- Mountain Echo
-(47, 'headline', '22:15:00', '00:00:00', 19, NULL); -- Marcos Rodriguez
+(47, 'warm up', '18:30:00', '19:30:00', NULL, 13),
+(47, 'regular', '19:45:00', '20:45:00', 18, NULL), 
+(47, 'special guest', '21:00:00', '22:00:00', NULL, 14), 
+(47, 'headline', '22:15:00', '00:00:00', 19, NULL); 
 
 -- Insert Visitors (festival attendees)
 INSERT INTO Visitor (first_name, last_name, email, phone, birth_date) VALUES

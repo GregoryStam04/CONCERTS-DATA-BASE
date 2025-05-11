@@ -275,10 +275,6 @@ CREATE INDEX idx_performance_event ON Performance (event_id);
 CREATE INDEX idx_ticket_visitor ON Ticket (visitor_id);
 CREATE INDEX idx_rating_ticket ON Rating (ticket_id);
 
--- For genre-related queries
-CREATE INDEX idx_artist_genre ON ArtistGenre (genre_id, artist_id);
-CREATE INDEX idx_band_genre ON BandGenre (genre_id, band_id);
-
 -- For location-based queries
 CREATE INDEX idx_festival_location ON Festival (location_id);
 CREATE INDEX idx_location_continent ON Location (continent);
@@ -286,7 +282,6 @@ CREATE INDEX idx_location_continent ON Location (continent);
 -- For staff queries
 CREATE INDEX idx_staff_type ON Staff (staff_type);
 CREATE INDEX idx_staff_experience ON Staff (experience_level);
-CREATE INDEX idx_staff_assignment ON StaffAssignment (staff_id, event_id);
 
 -- For date-based queries
 CREATE INDEX idx_festival_dates ON Festival (start_date, end_date);
@@ -479,7 +474,7 @@ BEGIN
         AND YEAR(e.event_date) BETWEEN (festival_year - 3) AND (festival_year - 1);
     END IF;
     
-    IF consecutive_years > 3 THEN
+    IF consecutive_years >= 3 THEN
         SIGNAL SQLSTATE '45000' 
         SET MESSAGE_TEXT = 'Artist/Band cannot perform for more than 3 consecutive years';
     END IF;
