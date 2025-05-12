@@ -1,0 +1,93 @@
+
++-----------+--------------+------------------------+------------------------+
+| artist_id | artist_name  | avg_artist_performance | avg_overall_impression |
++-----------+--------------+------------------------+------------------------+
+|         4 | Sarah Wilson |                 4.0000 |                 3.0000 |
++-----------+--------------+------------------------+------------------------+
+1 row in set (0.001 sec)
+
++-----------+--------------+------------------------+------------------------+
+| artist_id | artist_name  | avg_artist_performance | avg_overall_impression |
++-----------+--------------+------------------------+------------------------+
+|         4 | Sarah Wilson |                 4.0000 |                 3.0000 |
++-----------+--------------+------------------------+------------------------+
+1 row in set (0.001 sec)
+
+Query OK, 0 rows affected (0.000 sec)
+
++-----------+--------------+------------------------+------------------------+
+| artist_id | artist_name  | avg_artist_performance | avg_overall_impression |
++-----------+--------------+------------------------+------------------------+
+|         4 | Sarah Wilson |                 4.0000 |                 3.0000 |
++-----------+--------------+------------------------+------------------------+
+1 row in set (0.001 sec)
+
++-----------+--------------+------------------------+------------------------+
+| artist_id | artist_name  | avg_artist_performance | avg_overall_impression |
++-----------+--------------+------------------------+------------------------+
+|         4 | Sarah Wilson |                 4.0000 |                 3.0000 |
++-----------+--------------+------------------------+------------------------+
+1 row in set (0.001 sec)
+
++-----------+--------------+------------------------+------------------------+
+| artist_id | artist_name  | avg_artist_performance | avg_overall_impression |
++-----------+--------------+------------------------+------------------------+
+|         4 | Sarah Wilson |                 4.0000 |                 3.0000 |
++-----------+--------------+------------------------+------------------------+
+1 row in set (0.001 sec)
+
++----------+------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Query_ID | Duration   | Query                                                                                                                                                                                                                                                                                                        |
++----------+------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+|        1 | 0.00104250 | SELECT
+    a.artist_id,
+    a.artist_name,
+    AVG(r.artist_performance) AS avg_artist_performance,
+    AVG(r.overall_impression) AS avg_overall_impression
+FROM
+    Artist a
+    JOIN Performance p ON a.artist_id = p.artist_id
+    JOIN Rating r ON p.performance_id = r.performance_id
+WHERE
+    a.ar |
+|        2 | 0.00076030 | SELECT
+    a.artist_id,
+    a.artist_name,
+    AVG(r.artist_performance) AS avg_artist_performance,
+    AVG(r.overall_impression) AS avg_overall_impression
+FROM
+    Artist a
+    JOIN Performance p FORCE INDEX (idx_performance_artist) ON a.artist_id = p.artist_id
+    JOIN Rating r FORCE INDEX (idx_ |                                                                                                                                                                                                                                                                                     |
+|        3 | 0.00060700 | SELECT
+    a.artist_id,
+    a.artist_name,
+    AVG(r.artist_performance) AS avg_artist_performance,
+    AVG(r.overall_impression) AS avg_overall_impression
+FROM
+    Artist a
+    INNER JOIN Performance p ON a.artist_id = p.artist_id
+    INNER JOIN Rating r ON p.performance_id = r.performance_id
+WHE |
+|        4 | 0.00048910 | SELECT
+    a.artist_id,
+    a.artist_name,
+    AVG(r.artist_performance) AS avg_artist_performance,
+    AVG(r.overall_impression) AS avg_overall_impression
+FROM
+    Artist a
+    INNER JOIN Performance p ON a.artist_id = p.artist_id
+    INNER JOIN Rating r ON p.performance_id = r.performance_id
+WHE |
+|        5 | 0.00057770 | SELECT
+    a.artist_id,
+    a.artist_name,
+    AVG(r.artist_performance) AS avg_artist_performance,
+    AVG(r.overall_impression) AS avg_overall_impression
+FROM
+    Artist a
+    INNER JOIN Performance p ON a.artist_id = p.artist_id
+    INNER JOIN Rating r ON p.performance_id = r.performance_id
+WHE |
++----------+------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+5 rows in set (0.000 sec)
