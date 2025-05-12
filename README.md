@@ -17,7 +17,7 @@ Our repository contains all the important files for the adequate use of our Data
 - code/fake_data.py -> Python script to generate the random data population sql script.
 - docs/report.pdf -> Report of our work and steps done to implement our application.
 
-Collaborators:
-* Georgios Pallis
-* Grigorios Stamatopoulos
-* Nickolaos Fragkos
+## Collaborators:
+* Georgios Pallis (https://github.com/gepall-bot)
+* Grigorios Stamatopoulos (https://github.com/GregoryStam04)
+* Nickolaos-Dionysios Fragkos (https://github.com/nikolasfragkos)
