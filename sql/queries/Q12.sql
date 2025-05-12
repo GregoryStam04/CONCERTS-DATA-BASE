@@ -1,8 +1,10 @@
 -- Query 12: Staff required for each day of the festival, by category
 SELECT 
     e.event_date,
-    s.staff_type,
-    COUNT(DISTINCT s.staff_id) AS staff_count
+    SUM(CASE WHEN s.staff_type = 'security' THEN 1 ELSE 0 END) AS security_count,
+    SUM(CASE WHEN s.staff_type = 'technical' THEN 1 ELSE 0 END) AS technical_count,
+    SUM(CASE WHEN s.staff_type = 'support' THEN 1 ELSE 0 END) AS support_count,
+    COUNT(DISTINCT s.staff_id) AS total_count
 FROM 
     Event e
     JOIN StaffAssignment sa ON e.event_id = sa.event_id
@@ -12,6 +14,6 @@ FROM
 WHERE 
     f.festival_id = 9  -- Replace with specific festival ID
 GROUP BY 
-    e.event_date, s.staff_type
+    e.event_date
 ORDER BY 
-    e.event_date, s.staff_type;
+    e.event_date;
