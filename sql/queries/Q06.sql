@@ -95,23 +95,4 @@ WHERE
 GROUP BY
     v.visitor_id, v.first_name, v.last_name, e.event_id, e.event_name;
 
-EXPLAIN
-SELECT
-    v.visitor_id,
-    v.first_name,
-    v.last_name,
-    e.event_id,
-    e.event_name,
-    AVG(r.overall_impression) AS avg_overall_rating
-FROM
-    Visitor v
-    JOIN Ticket t ON v.visitor_id = t.visitor_id
-    JOIN Event e ON t.event_id = e.event_id
-    LEFT JOIN Performance p ON e.event_id = p.event_id
-    LEFT JOIN Rating r ON p.performance_id = r.performance_id AND t.ticket_id = r.ticket_id
-WHERE
-    v.visitor_id = 1
-GROUP BY
-    v.visitor_id, v.first_name, v.last_name, e.event_id, e.event_name;
-
 SHOW PROFILES;

@@ -1,0 +1,15 @@
++----------+------------+-----------+-----------------------+
+| staff_id | first_name | last_name | role                  |
++----------+------------+-----------+-----------------------+
+|       66 | Benjamin   | Wright    | Merchandise Assistant |
+|       67 | Charlotte  | Hayes     | Food Service          |
+|       68 | Mason      | Gibson    | Accessibility Support |
+|       69 | Harper     | Dixon     | Lost and Found        |
+|       70 | Jack       | Wagner    | Information Guide     |
+|       71 | Lily       | Warren    | First Aid Assistant   |
+|       72 | Owen       | Boyd      | VIP Host              |
+|       73 | Chloe      | Fuller    | Volunteer Coordinator |
+|       74 | Samuel     | Mills     | Artist Liaison        |
+|       75 | Grace      | Webb      | Ticketing Assistant   |
++----------+------------+-----------+-----------------------+
+10 rows in set (0.003 sec)
