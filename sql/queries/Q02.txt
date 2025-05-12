@@ -1,0 +1,11 @@
+-- Query 2: Find all artists of a specific genre with indication if they participated in a specific year's festival
+
++-----------+------------------+----------------------------+
+| artist_id | artist_name      | performed_in_festival_2019 |
++-----------+------------------+----------------------------+
+|        31 | Christopher Reed | No                         |
+|         1 | John Smith       | Yes                        |
+|        16 | Olivia Nelson    | No                         |
+|        46 | Scarlett Coleman | No                         |
++-----------+------------------+----------------------------+
+4 rows in set (0.012 sec)

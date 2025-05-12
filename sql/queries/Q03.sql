@@ -8,6 +8,7 @@ SELECT
 FROM 
     Performance p
     JOIN Artist a ON p.artist_id = a.artist_id
+    
     JOIN Event e ON p.event_id = e.event_id
     JOIN Stage s ON e.stage_id = s.stage_id
     JOIN Festival f ON s.festival_id = f.festival_id
