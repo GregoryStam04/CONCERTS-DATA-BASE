@@ -1,3 +1,4 @@
+-- QUERY 14: Music genres that had the same amount of appearances in two consequent years, with at least 3 appearances
 WITH PerfGenre AS (
   -- all artist-genre performances
   SELECT 
