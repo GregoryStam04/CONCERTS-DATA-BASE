@@ -1,0 +1,8 @@
+-- Query 3: Artists who appeared as "warm up" more than 2 times in the same festival
+
++-----------+-------------+-------------+-----------------------+---------------+
+| artist_id | artist_name | festival_id | festival_name         | warm_up_count |
++-----------+-------------+-------------+-----------------------+---------------+
+|         1 | John Smith  |           1 | Pulse University 2015 |             3 |
++-----------+-------------+-------------+-----------------------+---------------+
+1 row in set (0.004 sec)

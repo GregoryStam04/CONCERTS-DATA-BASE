@@ -1,0 +1,19 @@
+-- Query 5: Young artists (under 30) with most festival appearances
++-----------+------------------+------+----------------+
+| artist_id | artist_name      | age  | festival_count |
++-----------+------------------+------+----------------+
+|        14 | Alexandra Adams  |   27 |              3 |
+|        18 | Emma White       |   29 |              3 |
+|        13 | Kevin Wang       |   26 |              3 |
+|         6 | Lisa Chen        |   29 |              3 |
+|        22 | Natalie Patel    |   28 |              2 |
+|        26 | Rebecca Allen    |   28 |              2 |
+|        42 | Aubrey Jenkins   |   28 |              1 |
+|        50 | Aurora James     |   27 |              1 |
+|        32 | Ava Mitchell     |   29 |              1 |
+|        38 | Chloe Murphy     |   26 |              1 |
+|        30 | Isabella Clark   |   27 |              1 |
+|        46 | Scarlett Coleman |   26 |              1 |
+|        36 | Zoe Campbell     |   27 |              1 |
++-----------+------------------+------+----------------+
+13 rows in set (0.012 sec)
