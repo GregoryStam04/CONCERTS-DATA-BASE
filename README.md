@@ -3,7 +3,7 @@ In this repo, we implement a database project for our university class of Databa
 The goal of our database is to collect and manage data for a festival organization across 10 years. Our database contains information about the festival's location, events, performances, artists, etc and a FIFO process resale queue for the festival's tickets.
 
 ## Frameworks and Technologies used:
-- MariaDB (v10.11.10)
+- MariaDB (v 10.4.32)
 - XAMPP (v8.0.30)
 - MySQL Workbench(v8.0.42)
 - Python 3.13.3 ( Faker, Random, Datetime Libraries)

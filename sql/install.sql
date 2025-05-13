@@ -289,6 +289,7 @@ CREATE INDEX idx_event_date ON Event (event_date);
 
 -- Add this index to optimize Query 5 (young artists)
 CREATE INDEX idx_artist_birth_date ON Artist (birth_date);
+CREATE INDEX idx_rating_performance ON Rating (performance_id);
 
 
 -----------------------------------------------------------------------------
