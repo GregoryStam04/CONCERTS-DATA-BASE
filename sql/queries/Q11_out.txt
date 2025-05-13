@@ -1,0 +1,37 @@
++-----------+------------------+-------------------+------------+
+| artist_id | artist_name      | performance_count | difference |
++-----------+------------------+-------------------+------------+
+|        24 | Michelle Park    |                 2 |          5 |
+|         5 | David Brown      |                 2 |          5 |
+|        22 | Natalie Patel    |                 2 |          5 |
+|        29 | Ethan Lewis      |                 2 |          5 |
+|        25 | Timothy Scott    |                 2 |          5 |
+|        21 | Victor Nguyen    |                 2 |          5 |
+|        20 | Grace Kim        |                 2 |          5 |
+|        19 | Marcos Rodriguez |                 2 |          5 |
+|        26 | Rebecca Allen    |                 2 |          5 |
+|        23 | Brandon Wilson   |                 2 |          5 |
+|        27 | Jacob Moore      |                 2 |          5 |
+|        28 | Samantha Torres  |                 2 |          5 |
+|        33 | Jonathan Kelly   |                 1 |          6 |
+|        46 | Scarlett Coleman |                 1 |          6 |
+|        47 | Leo Bennett      |                 1 |          6 |
+|        49 | Noah Parker      |                 1 |          6 |
+|        42 | Aubrey Jenkins   |                 1 |          6 |
+|        40 | Lily Cooper      |                 1 |          6 |
+|        50 | Aurora James     |                 1 |          6 |
+|        39 | Gabriel Rivera   |                 1 |          6 |
+|        43 | Oscar Thompson   |                 1 |          6 |
+|        32 | Ava Mitchell     |                 1 |          6 |
+|        48 | Luna Martinez    |                 1 |          6 |
+|        37 | Benjamin Foster  |                 1 |          6 |
+|        45 | Henry Dixon      |                 1 |          6 |
+|        36 | Zoe Campbell     |                 1 |          6 |
+|        30 | Isabella Clark   |                 1 |          6 |
+|        34 | Maria Gonzalez   |                 1 |          6 |
+|        38 | Chloe Murphy     |                 1 |          6 |
+|        41 | Mason Wood       |                 1 |          6 |
+|        44 | Ruby Brooks      |                 1 |          6 |
+|        31 | Christopher Reed |                 1 |          6 |
++-----------+------------------+-------------------+------------+
+32 rows in set (0.001 sec)

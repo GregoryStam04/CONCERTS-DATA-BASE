@@ -1,0 +1,12 @@
++-----------+----------------+-----------------+
+| artist_id | artist_name    | continent_count |
++-----------+----------------+-----------------+
+|        12 | Sophia Lee     |               4 |
+|        15 | Daniel Garcia  |               3 |
+|         2 | Emily Davis    |               3 |
+|         1 | John Smith     |               3 |
+|        10 | Patricia Lopez |               3 |
+|         4 | Sarah Wilson   |               3 |
+|        11 | Thomas Wright  |               3 |
++-----------+----------------+-----------------+
+7 rows in set (0.025 sec)

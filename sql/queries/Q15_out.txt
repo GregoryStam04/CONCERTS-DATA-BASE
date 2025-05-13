@@ -1,0 +1,10 @@
++------------+------------+-----------+-----------+-------------+--------------+
+| visitor_id | first_name | last_name | artist_id | artist_name | total_rating |
++------------+------------+-----------+-----------+-------------+--------------+
+|         48 | Wyatt      | Carter    |         1 | John Smith  |           32 |
+|         42 | Penelope   | Nelson    |         1 | John Smith  |           28 |
+|         45 | Sebastian  | Rivera    |         1 | John Smith  |           26 |
+|          6 | Emma       | Miller    |         1 | John Smith  |           23 |
+|         49 | Zoey       | Roberts   |         1 | John Smith  |           22 |
++------------+------------+-----------+-----------+-------------+--------------+
+5 rows in set (0.515 sec)
