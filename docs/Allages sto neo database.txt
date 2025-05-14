@@ -36,3 +36,7 @@ er-relational
 
 er σειρά επεξήγησης: Location , festival, stage, event, staff, performance, artist, band , artistband, bandgenre artistgenre, genre,
                     , ticket, rating , visitor, resalesellerqueue, ticketcategory, resalebuyerqueue
+
+
+13/5/25:
+    create more unique Indexes

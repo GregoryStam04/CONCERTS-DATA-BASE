@@ -1,4 +1,4 @@
-
+-- Simple Query
 +-----------+--------------+------------------------+------------------------+
 | artist_id | artist_name  | avg_artist_performance | avg_overall_impression |
 +-----------+--------------+------------------------+------------------------+
@@ -6,6 +6,7 @@
 +-----------+--------------+------------------------+------------------------+
 1 row in set (0.001 sec)
 
+-- Force Index
 +-----------+--------------+------------------------+------------------------+
 | artist_id | artist_name  | avg_artist_performance | avg_overall_impression |
 +-----------+--------------+------------------------+------------------------+
@@ -15,6 +16,7 @@
 
 Query OK, 0 rows affected (0.000 sec)
 
+-- Nested Loop Join
 +-----------+--------------+------------------------+------------------------+
 | artist_id | artist_name  | avg_artist_performance | avg_overall_impression |
 +-----------+--------------+------------------------+------------------------+
@@ -22,6 +24,7 @@ Query OK, 0 rows affected (0.000 sec)
 +-----------+--------------+------------------------+------------------------+
 1 row in set (0.001 sec)
 
+-- Hash Join BNLH
 +-----------+--------------+------------------------+------------------------+
 | artist_id | artist_name  | avg_artist_performance | avg_overall_impression |
 +-----------+--------------+------------------------+------------------------+
@@ -29,6 +32,7 @@ Query OK, 0 rows affected (0.000 sec)
 +-----------+--------------+------------------------+------------------------+
 1 row in set (0.001 sec)
 
+-- Hash Join BKAH
 +-----------+--------------+------------------------+------------------------+
 | artist_id | artist_name  | avg_artist_performance | avg_overall_impression |
 +-----------+--------------+------------------------+------------------------+
@@ -39,7 +43,10 @@ Query OK, 0 rows affected (0.000 sec)
 +----------+------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | Query_ID | Duration   | Query                                                                                                                                                                                                                                                                                                        |
 +----------+------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-|        1 | 0.00104250 | SELECT
+-- Simple Query
+
+|       33 | 0.00052290 | EXPLAIN
+SELECT
     a.artist_id,
     a.artist_name,
     AVG(r.artist_performance) AS avg_artist_performance,
@@ -48,9 +55,12 @@ FROM
     Artist a
     JOIN Performance p ON a.artist_id = p.artist_id
     JOIN Rating r ON p.performance_id = r.performance_id
-WHERE
-    a.ar |
-|        2 | 0.00076030 | SELECT
+WHERE |
+
+-- Force Index
+
+|       34 | 0.00050460 | EXPLAIN
+SELECT
     a.artist_id,
     a.artist_name,
     AVG(r.artist_performance) AS avg_artist_performance,
@@ -58,8 +68,12 @@ WHERE
 FROM
     Artist a
     JOIN Performance p FORCE INDEX (idx_performance_artist) ON a.artist_id = p.artist_id
-    JOIN Rating r FORCE INDEX (idx_ |                                                                                                                                                                                                                                                                                     |
-|        3 | 0.00060700 | SELECT
+    JOIN Rating r FORCE IND |
+
+-- Nested Loop Join
+
+|       35 | 0.00060600 | EXPLAIN
+SELECT
     a.artist_id,
     a.artist_name,
     AVG(r.artist_performance) AS avg_artist_performance,
@@ -67,9 +81,12 @@ FROM
 FROM
     Artist a
     INNER JOIN Performance p ON a.artist_id = p.artist_id
-    INNER JOIN Rating r ON p.performance_id = r.performance_id
-WHE |
-|        4 | 0.00048910 | SELECT
+    INNER JOIN Rating r ON p.performance_id = r.performanc |
+
+-- Hash Join BNLH
+
+|       21 | 0.00476070 | EXPLAIN
+SELECT
     a.artist_id,
     a.artist_name,
     AVG(r.artist_performance) AS avg_artist_performance,
@@ -77,9 +94,12 @@ WHE |
 FROM
     Artist a
     INNER JOIN Performance p ON a.artist_id = p.artist_id
-    INNER JOIN Rating r ON p.performance_id = r.performance_id
-WHE |
-|        5 | 0.00057770 | SELECT
+    INNER JOIN Rating r ON p.performance_id = r.performan |
+
+-- Hash Join BKAH
+
+|       30 | 0.00060850 | EXPLAIN
+SELECT
     a.artist_id,
     a.artist_name,
     AVG(r.artist_performance) AS avg_artist_performance,
@@ -87,7 +107,6 @@ WHE |
 FROM
     Artist a
     INNER JOIN Performance p ON a.artist_id = p.artist_id
-    INNER JOIN Rating r ON p.performance_id = r.performance_id
-WHE |
+    INNER JOIN Rating r ON p.performance_id = r.performan |
 +----------+------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-5 rows in set (0.000 sec)
+15 rows in set (0.000 sec)
